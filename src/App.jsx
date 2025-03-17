@@ -6,6 +6,7 @@ import Header from './components/Header'
 import About from './components/About'
 import Skill from './components/Skill'
 import Project from './components/Project'
+import Experience from './components/Experience'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -17,6 +18,7 @@ function App() {
         <About></About>
         <Skill ></Skill>
         <Project></Project>
+        <Experience></Experience>
       </div>
     </div>
   )
