@@ -21,7 +21,7 @@ const projects = [
                 " AI chatbot (juniper) "
             ]
         },
-        techStack: ["React.js", "Node.js", "Express.js", "MongoDB", "Mongoose", "Firebase Authentication", "Axios", "Tailwind css"],
+        techStack: ["React.js", "Node.js", "Express.js", "MongoDB", "Mongoose", "Firebase Authentication", "Axios", "Tailwind CSS"],
         link: "https://github.com/MaskuraBegum/Instant-Chef",
         liveLink: "https://ourinstantchef.netlify.app/"
     },
@@ -38,7 +38,7 @@ const projects = [
                 "Implemented profile update functionality"
               ]
         },
-        techStack: ["React.js", "Firebase Authentication", "Tailwind CSS", "DaisyUI", "AOS package", "React Hook Form", ],
+        techStack: ["React.js", "Firebase Authentication", "Tailwind CSS", "DaisyUI", "AOS package", "React Hook Form"],
         link: "https://github.com/MaskuraBegum/Real_estate",
         liveLink: "https://thunderous-melba-9d02c3.netlify.app/"
     },
@@ -47,7 +47,7 @@ const projects = [
         role: "Full-Stack Developer",
         description: "A dynamic book exploration platform that allows users to discover, categorize, and manage their reading lists effortlessly.",
         summary: {
-          "overview": "Book Vibe offers a seamless experience for users to explore new books, add them to their wishlist, and sort them based on key attributes.",
+          overview: "Book Vibe offers a seamless experience for users to explore new books, add them to their wishlist, and sort them based on key attributes.",
           features: [
             "Book details accessible from the Home page.",
             "View all books in the Listed Books section.",
@@ -67,15 +67,15 @@ const projects = [
         role: "Front-End Developer",
         description: "A modern and user-friendly online ticket booking platform designed for daily commuting, allowing users to select routes, book seats, and manage reservations.",
         summary: {
-          "overview": "P-Ticket offers a seamless experience for booking seats with dynamic seat selection, price calculation, and real-time updates.",
+          overview: "P-Ticket offers a seamless experience for booking seats with dynamic seat selection, price calculation, and real-time updates.",
           features: [
             "Dynamic seat selection with a maximum of 4 seats per booking.",
             "Real-time updates for selected and available seat count.",
             "Price calculation based on the number of selected seats (550 each).",
             "Coupon code discounts (NEW15 → 15%, Couple 20 → 20%).",
-            "alerts to prevent exceeding seat limit or reselecting booked seats.",
+            "Alerts to prevent exceeding seat limit or reselecting booked seats.",
             "Enabled 'Apply Coupon' button after selecting 4 seats.",
-            "Enabled 'Next' button after selecting at least one seat phone number.",
+            "Enabled 'Next' button after selecting at least one seat and phone number.",
             "User feedback messages for valid coupon application."
           ]
         },
@@ -83,7 +83,6 @@ const projects = [
         link: "https://github.com/MaskuraBegum/smart-ticket",
         liveLink: "https://maskurabegum.github.io/smart-ticket/"
       }
-      
 ];
 
 const Project = () => {
@@ -103,27 +102,27 @@ const Project = () => {
             </div>
 
             <div className="flex flex-col lg:flex-row gap-6 items-center justify-center">
-                <div data-aos="fade-right" className="w-full lg:w-[600px] flex flex-col items-center mt-12 lg:mt-0">
-                    <img src="/resource/aboutImage.png" alt="Project Representation" className="w-96 lg:w-[550px] rounded-lg shadow-lg mb-4" />
+                <div data-aos="fade-right" className="w-full lg:w-[600px] flex flex-col items-center mt-0 lg:mt-0">
+                    <img src="/resource/aboutImage.png" alt="Project Representation" className="w-96 lg:w-[650px] h-full lg:h-[420px] rounded-lg shadow-lg mb-4" />
                 </div>
 
                 <div className="flex flex-col items-center p-4 gap-6 w-full">
                     {projects.map((project, index) => (
                         <motion.div 
                             key={index} 
-                            className="bg-gray-800 rounded-xl p-6 shadow-lg w-full flex justify-between items-center relative hover:shadow-2xl transition-transform duration-500 hover:scale-105"
+                            className="bg-gray-800 rounded-xl p-6 shadow-lg w-full flex flex-col relative hover:shadow-2xl transition-transform duration-500 hover:scale-105"
                             whileTap={{ scale: 0.95 }}
                         >
-                            <div>
-                                <h3 className="text-2xl font-semibold text-amber-200 mb-2">{project.title}</h3>
-                                <p className="text-gray-300 w-60 lg:w-xl  text-base">{project.description}</p>
+                            <h3 className="text-2xl font-semibold text-amber-200 mb-2">{project.title}</h3>
+                            <p className="text-gray-300 w-full lg:w-xl text-base">{project.description}</p>
+                            <div className="flex justify-end mt-4">
+                                <button 
+                                    onClick={() => setSelectedProject(project)} 
+                                    className="bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-400 transition-all"
+                                >
+                                    View
+                                </button>
                             </div>
-                            <button 
-                                onClick={() => setSelectedProject(project)} 
-                                className="absolute bottom-4 right-4 bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-400 transition-all"
-                            >
-                                View
-                            </button>
                         </motion.div>
                     ))}
                 </div>

@@ -7,7 +7,6 @@ import { SiMongodb } from "react-icons/si";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
 import 'animate.css';
-
 AOS.init();
 
 const row1Skills = [
@@ -49,7 +48,7 @@ const Skill = () => {
                                 animate={{ x: row % 2 === 0 ? ["0%", "-100%"] : ["-100%", "0%"] }}
                                 transition={{
                                     repeat: Infinity,
-                                    duration: window.innerWidth <= 768 ? 10 : 30, // Faster animation for small devices, slower for large devices
+                                    duration: 40, // Default transition duration for large devices
                                     ease: "linear",
                                 }}
                                 style={{ display: "flex", flexWrap: "nowrap" }}

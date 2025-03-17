@@ -105,15 +105,15 @@ const Contact = () => {
 
           {/* Contact Info Box */}
           <div className="p-6 flex flex-col items-start justify-center text-left">
-            <p className="text-lg lg:text-2xl text-gray-300 mb-2 flex items-center">
+            <p className="text-sm lg:text-2xl text-gray-300 mb-2 flex items-center">
               <FaEnvelope className="mr-2 text-amber-300 hover:text-amber-400 transition-colors" size={24} />
               Email: <a href="mailto:maskura.begum77@gmail.com" className="text-amber-300 hover:text-amber-400">maskura.begum77@gmail.com</a>
             </p>
-            <p className="text-2xl text-gray-300 mb-2 flex items-center">
+            <p className=" text-sm lg:text-2xl text-gray-300 mb-2 flex items-center">
               <FaPhone className="mr-2 text-amber-300 hover:text-amber-400 transition-colors" size={24} />
               Call: <a href="tel:+8801998282899" className="text-amber-300 hover:text-amber-400">+8801998282899</a>
             </p>
-            <p className="text-2xl text-gray-300 mb-2 flex items-center">
+            <p className="text-lg lg;text-2xl text-gray-300 mb-2 flex items-center">
               <FaMapMarkerAlt className="mr-2 text-amber-300 hover:text-amber-400 transition-colors" size={24} />
               Location: Cumilla, Bangladesh
             </p>
