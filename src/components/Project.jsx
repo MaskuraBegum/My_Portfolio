@@ -3,73 +3,111 @@ import { motion } from "framer-motion";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import 'animate.css';
-import { AiOutlineClose } from 'react-icons/ai'; // Import from react-icons
+import { AiOutlineClose } from 'react-icons/ai';
 
 AOS.init();
 
 const projects = [
     {
-        title: "Instant Chef",
-        description: "A smart recipe recommendation platform based on available ingredients, where I worked as a backend developer, designing the ingredient matching algorithm and integrating secure authentication.",
-        summary: "Instant Chef is a platform that helps users find recipes based on the ingredients they have at home. As a backend developer, I designed and implemented an ingredient matching algorithm using Node.js and Express.js, ensuring fast and relevant recipe recommendations. I integrated Firebase Authentication to provide secure admin access, allowing administrators to manage recipes through CRUD operations. The recipe data is stored and retrieved using MongoDB with Mongoose, enabling fast, scalable, and efficient data handling. Additionally, I utilized Axios for making asynchronous requests to the backend and ensured a smooth user experience. This project showcases my expertise in backend development, authentication, database management, and API integration, providing a seamless and intuitive platform for users.",
+        title: "Instant Chef 🍳",
+        role: "Backend Developer",
+        description: "A smart recipe recommendation platform based on available ingredients.",
+        summary: {
+            overview: "Instant Chef helps users find recipes based on available ingredients. As a backend developer of the project I implemented",
+            features: [
+                " An ingredient matching algorithm using Node.js and Express.js.",
+                " Firebase Authentication for secure admin access and management.",
+                " CRUD operations for managing recipes through an admin panel.",
+                " AI chatbot (juniper) "
+            ]
+        },
+        techStack: ["React.js", "Node.js", "Express.js", "MongoDB", "Mongoose", "Firebase Authentication", "Axios", "Tailwind css"],
         link: "https://github.com/MaskuraBegum/Instant-Chef",
         liveLink: "https://ourinstantchef.netlify.app/"
     },
     {
-        title: "Project 2",
-        description: "A brief description of Project 2 and its core features.",
-        summary: "An overview of Project 2, explaining the problem it solves and the tech stack used.",
-        link: "https://github.com/yourusername/project2",
-        liveLink: "https://yourwebsite.com/project2"
+        title: "RoyalNest 🏡 ",
+        role: "Full-Stack Developer",
+        description: "A luxury real estate platform that offers exclusive access to prestigious properties tailored to exceed expectations.",
+        summary: {
+            overview: "RoyalNest provides a seamless and secure browsing experience with private routes available only to authenticated users. I implemented",
+            features: [
+                "Restricted access to private pages",
+                "Automatic redirection post-login with Firebase for secure login.",
+                "Designed a responsive UI with Tailwind CSS.",
+                "Implemented profile update functionality"
+              ]
+        },
+        techStack: ["React.js", "Firebase Authentication", "Tailwind CSS", "DaisyUI", "AOS package", "React Hook Form", ],
+        link: "https://github.com/MaskuraBegum/Real_estate",
+        liveLink: "https://thunderous-melba-9d02c3.netlify.app/"
     },
     {
-        title: "Project 3",
-        description: "An overview of Project 3 and its key functionalities.",
-        summary: "A summary of Project 3, showcasing the tools and technologies involved.",
-        link: "https://github.com/yourusername/project3",
-        liveLink: "https://yourwebsite.com/project3"
-    },
-    {
-        title: "Project 4",
-        description: "A summary of Project 4 and its unique features.",
-        summary: "Project 4 description highlighting its innovation and impact.",
-        link: "https://github.com/yourusername/project4",
-        liveLink: "https://yourwebsite.com/project4"
-    }
+        title: "Book Vibe 📚",
+        role: "Full-Stack Developer",
+        description: "A dynamic book exploration platform that allows users to discover, categorize, and manage their reading lists effortlessly.",
+        summary: {
+          "overview": "Book Vibe offers a seamless experience for users to explore new books, add them to their wishlist, and sort them based on key attributes.",
+          features: [
+            "Book details accessible from the Home page.",
+            "View all books in the Listed Books section.",
+            "Categorize books as Read or Wishlist.",
+            "Sort books by Rating, Pages, and Year.",
+            "Filter books by genre or category.",
+            "Show upcoming releases in Coming Soon.",
+            "Clean, user-friendly responsive design.",
+          ]
+        },
+        techStack: ["React.js", "Tailwind CSS", "DaisyUI", "Figma"],
+        link: "https://github.com/MaskuraBegum/Book_vibe",
+        liveLink: "https://poetic-kangaroo-c2c3bd.netlify.app/"
+      },
+      {
+        title: "P-Ticket 🎟️",
+        role: "Front-End Developer",
+        description: "A modern and user-friendly online ticket booking platform designed for daily commuting, allowing users to select routes, book seats, and manage reservations.",
+        summary: {
+          "overview": "P-Ticket offers a seamless experience for booking seats with dynamic seat selection, price calculation, and real-time updates.",
+          features: [
+            "Dynamic seat selection with a maximum of 4 seats per booking.",
+            "Real-time updates for selected and available seat count.",
+            "Price calculation based on the number of selected seats (550 each).",
+            "Coupon code discounts (NEW15 → 15%, Couple 20 → 20%).",
+            "alerts to prevent exceeding seat limit or reselecting booked seats.",
+            "Enabled 'Apply Coupon' button after selecting 4 seats.",
+            "Enabled 'Next' button after selecting at least one seat phone number.",
+            "User feedback messages for valid coupon application."
+          ]
+        },
+        techStack: ["HTML", "Tailwind CSS", "JavaScript (DOM Manipulation)"],
+        link: "https://github.com/MaskuraBegum/smart-ticket",
+        liveLink: "https://maskurabegum.github.io/smart-ticket/"
+      }
+      
 ];
 
 const Project = () => {
     const [selectedProject, setSelectedProject] = useState(null);
 
     useEffect(() => {
-        // Disable scrolling when the modal is open
-        if (selectedProject) {
-            document.body.style.overflow = "hidden";
-        } else {
-            document.body.style.overflow = "auto";
-        }
+        document.body.style.overflow = selectedProject ? "hidden" : "auto";
     }, [selectedProject]);
 
     return (
         <div id="projects" className="relative flex flex-col py-16 px-6 md:px-12 lg:px-20 bg-gray-900 text-white">
-            {/* Title and Description */}
             <div className="text-center mb-12">
                 <h2 className="text-4xl sm:text-5xl font-bold text-amber-200 mb-4">My Projects</h2>
                 <p className="text-sm sm:text-xl text-gray-300 max-w-3xl mx-auto">
                     These are a few handpicked projects that reflect my skills and expertise.
-                    Explore each one to see how I solve real-world problems using cutting-edge technologies.
                 </p>
             </div>
 
-            {/* Projects and Image Section as Flex */}
             <div className="flex flex-col lg:flex-row gap-6 items-center justify-center">
-                {/* Image Section */}
                 <div data-aos="fade-right" className="w-full lg:w-[600px] flex flex-col items-center mt-12 lg:mt-0">
                     <img src="/resource/aboutImage.png" alt="Project Representation" className="w-96 lg:w-[550px] rounded-lg shadow-lg mb-4" />
                 </div>
 
-                {/* Projects Section */}
-                <div className="flex flex-col items-center p-4 gap-6 w-full ">
+                <div className="flex flex-col items-center p-4 gap-6 w-full">
                     {projects.map((project, index) => (
                         <motion.div 
                             key={index} 
@@ -80,8 +118,6 @@ const Project = () => {
                                 <h3 className="text-2xl font-semibold text-amber-200 mb-2">{project.title}</h3>
                                 <p className="text-gray-300 w-xl text-base">{project.description}</p>
                             </div>
-                            
-                            {/* View Button */}
                             <button 
                                 onClick={() => setSelectedProject(project)} 
                                 className="absolute bottom-4 right-4 bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-400 transition-all"
@@ -93,15 +129,9 @@ const Project = () => {
                 </div>
             </div>
 
-            {/* Overlay for Page Opacity */}
-            {selectedProject && (
-                <div className="fixed inset-0 bg-black opacity-50 z-40"></div>
-            )}
-
-            {/* Modal */}
             {selectedProject && (
                 <motion.div 
-                    className="fixed inset-0 flex justify-center items-center p-4 z-50"
+                    className="fixed inset-0 flex justify-center w-full items-center p-4 z-50"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
@@ -112,16 +142,17 @@ const Project = () => {
                         animate={{ scale: 1 }}
                         exit={{ scale: 0.8 }}
                     >
-                        {/* Close Button */}
-                        <button 
-                            onClick={() => setSelectedProject(null)} 
-                            className="absolute top-4 right-4 text-white text-3xl"
-                        >
+                        <button onClick={() => setSelectedProject(null)} className="absolute top-4 right-4 text-white text-3xl">
                             <AiOutlineClose size={30} />
                         </button>
-                        
                         <h3 className="text-2xl font-semibold text-amber-200 mb-3">{selectedProject.title}</h3>
-                        <p className="text-gray-300 text-base mb-4">{selectedProject.summary}</p>
+                        <p className="text-gray-300 text-base mb-4">{selectedProject.summary.overview}</p>
+                        <ul className="text-gray-300 text-sm mb-4 list-disc list-inside">
+                            {selectedProject.summary.features.map((feature, i) => (
+                                <li key={i}>{feature}</li>
+                            ))}
+                        </ul>
+                        <p className="text-gray-300 text-sm mb-4"><span className='font-extrabold'>Tech Stack: </span> {selectedProject.techStack.join(', ')}</p>
                         <div className="flex justify-between items-center">
                             <a href={selectedProject.link} className="text-blue-400 hover:text-blue-300 font-semibold" target="_blank" rel="noopener noreferrer">GitHub</a>
                             <a href={selectedProject.liveLink} className="text-blue-400 hover:text-blue-300 font-semibold" target="_blank" rel="noopener noreferrer">Live Demo</a>
