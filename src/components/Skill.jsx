@@ -33,14 +33,14 @@ const row2Skills = [
 
 const Skill = () => {
     return (
-        <div data-aos="fade-up" className='container bg-gradient-to-b from-gray-600 via-gray-700 to-gray-950' >
-            <div className="p-10 mt-6 mx-10 text-white overflow-hidden ">
+        <div  className=' bg-gray-900' >
+            <div className="p-10 mx-10 text-white overflow-hidden ">
                 <h2 className="text-4xl text-amber-200 font-bold text-center mb-6 animate__animated animate__zoomIn">My Skills</h2>
                 <p className="text-lg font-medium text-center mb-8 max-w-4xl mx-auto">
                     I am a developer proficient in <span className="text-blue-500">React.js</span>, <span className="text-green-500">Node.js</span>, and <span className="text-yellow-500">JavaScript</span>. Skilled in building dynamic applications with <span className="text-blue-700">MySQL</span>, <span className="text-green-700">MongoDB</span>, and <span className="text-green-600">Django</span>. Expertise in UI development using <span className="text-blue-400">Tailwind CSS</span> and <span className="text-purple-500">Daisy UI</span>, with experience in version control via <span className="text-red-500">Git</span>, deployment using <span className="text-blue-500">Netlify</span>, and authentication with <span className="text-yellow-400">Firebase</span>.
                 </p>
 
-                <div className="space-y-4 relative">
+                <div data-aos="fade-up" className="space-y-4 relative">
                     {[row1Skills, row2Skills].map((skills, row) => (
                         <div key={row} className="overflow-hidden w-full relative p-4">
                             <motion.div

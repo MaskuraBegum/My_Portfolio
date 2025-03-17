@@ -7,7 +7,7 @@ AOS.init();
 const About = () => {
     return (
         <div>
-            <section className=" py-6  rounded-t-4xl rounded-b-4xl">
+            <section className=" py-6 bg-gradient-to-b via-purple-900 to-gray-900 rounded-t-4xl ">
                 <div className="max-w-screen-xl mx-auto px-6">
                     <div className="flex flex-col gap-6 md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-12">
                         {/* Profile Image */}

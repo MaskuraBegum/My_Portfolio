@@ -66,7 +66,7 @@ const Header = () => {
                 <img
                     src="https://i.ibb.co.com/bM6Db8Rs/hero-Image.png"
                     alt="Hero image of me"
-                    className="animate__animated animate__flip border-amber-400 border-dashed border-b-1 border-l-1  m-4 rounded-full"
+                    className="animate__animated animate__flip"
                 />
 
                 {/* Blurring effects */}

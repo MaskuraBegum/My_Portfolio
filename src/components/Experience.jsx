@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const Experience = () => {
   return (
-    <section id="experience" className="py-16 bg-gradient-to-r from-gray-900 to-gray-800">
+    <section id="experience" className="py-16 bg-gradient-to-b from-gray-900 to-gray-800">
       <div className="max-w-7xl mx-auto text-center text-amber-300">
         <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-6">
           My Journey of Growth
