@@ -7,14 +7,14 @@ const Header = () => {
         <div className='container mx-auto '>
             <section className="container mx-auto py-10 flex flex-col md:flex-row items-center justify-between ">
                 {/* Content Section */}
-                <div className=" p-12 lg:p-20 space-y-2">
-                    <h1 className="text-5xl text-blue-200 font-extrabold animate__animated animate__backInLeft">
+                <div className=" p-12 lg:p-20 text-center lg:text-left space-y-2">
+                    <h1 className="text-3xl lg:text-5xl text-blue-200 font-extrabold animate__animated animate__backInLeft">
                         Hi, I'm  <span className='text-amber-200'>Maskura Begum</span>
                     </h1>
-                    <p className="text-3xl text-white font-medium">
+                    <p className="text-xl lg:text-3xl text-white font-medium">
                         I'm a Software Engineer passionate about building innovative solutions with cutting-edge technologies
                     </p>
-                    <div className='flex gap-4 py-4'>
+                    <div className='flex gap-4 py-4 items-center lg:items-start justify-center lg:justify-normal'>
                         {/* Mail Icon */}
                         <a href="mailto:your-email@example.com" target="_blank" rel="noopener noreferrer">
                             <div className='text-xl'><svg className='size-10' fill="none" height="17" viewBox="0 0 17 17" width="17" xmlns="http://www.w3.org/2000/svg"><path d="M14.1762 0.823608H2.68022C2.08296 0.823608 1.51015 1.06087 1.08782 1.4832C0.665486 1.90554 0.428223 2.47834 0.428223 3.07561V14.5716C0.428223 15.1689 0.665486 15.7417 1.08782 16.164C1.51015 16.5863 2.08296 16.8236 2.68022 16.8236H7.91222V10.9836H5.93422V8.70561H7.91222V7.02761C7.91222 6.07661 8.17522 5.33761 8.70122 4.81261C9.22722 4.28661 9.94022 4.02261 10.8412 4.02261C11.7432 4.02261 12.3272 4.05761 12.5942 4.12361V6.15161H11.3922C10.9582 6.15161 10.6622 6.24361 10.5032 6.42761C10.3452 6.61061 10.2662 6.88661 10.2662 7.25361V8.70561H12.5192L12.2192 10.9836H10.2662V16.8236H14.1762C14.7735 16.8236 15.3463 16.5863 15.7686 16.164C16.191 15.7417 16.4282 15.1689 16.4282 14.5716V3.07561C16.4282 2.47834 16.191 1.90554 15.7686 1.4832C15.3463 1.06087 14.7735 0.823608 14.1762 0.823608Z" fill="gold" /></svg>
@@ -45,7 +45,7 @@ const Header = () => {
 
 
 
-                    <div className="flex gap-4">
+                    <div className="flex gap-4 items-center lg:items-start justify-center lg:justify-normal">
                         {/* Contact Me Button */}
                         <a href="mailto:your-email@example.com"
                             className=" flex px-4 py-4 bg-blue-500 text-white rounded-4xl hover:bg-blue-600 transition"><svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M3.00977 5.83789C3.00977 5.28561 3.45748 4.83789 4.00977 4.83789H20C20.5523 4.83789 21 5.28561 21 5.83789V17.1621C21 18.2667 20.1046 19.1621 19 19.1621H5C3.89543 19.1621 3 18.2667 3 17.1621V6.16211C3 6.11449 3.00333 6.06765 3.00977 6.0218V5.83789ZM5 8.06165V17.1621H19V8.06199L14.1215 12.9405C12.9499 14.1121 11.0504 14.1121 9.87885 12.9405L5 8.06165ZM6.57232 6.80554H17.428L12.7073 11.5263C12.3168 11.9168 11.6836 11.9168 11.2931 11.5263L6.57232 6.80554Z" fill="currentColor" fill-rule="evenodd"/></svg>
@@ -66,7 +66,7 @@ const Header = () => {
                 <img
                     src="https://i.ibb.co.com/bM6Db8Rs/hero-Image.png"
                     alt="Hero image of me"
-                    className="animate__animated animate__flip"
+                    className="animate__animated animate__flip border-amber-400 border-dashed border-b-1 border-l-1  m-4 rounded-full"
                 />
 
                 {/* Blurring effects */}

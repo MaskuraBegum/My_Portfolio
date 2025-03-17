@@ -7,6 +7,7 @@ import { SiMongodb } from "react-icons/si";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
 import 'animate.css';
+
 AOS.init();
 
 const row1Skills = [
@@ -33,22 +34,22 @@ const row2Skills = [
 
 const Skill = () => {
     return (
-        <div  className=' bg-gray-900' >
-            <div className="p-10 mx-10 text-white overflow-hidden ">
+        <div className='bg-gray-900 p-4'>
+            <div className="p-0 lg:p-10 mx-10 text-white overflow-hidden">
                 <h2 className="text-4xl text-amber-200 font-bold text-center mb-6 animate__animated animate__zoomIn">My Skills</h2>
-                <p className="text-lg font-medium text-center mb-8 max-w-4xl mx-auto">
-                    I am a developer proficient in <span className="text-blue-500">React.js</span>, <span className="text-green-500">Node.js</span>, and <span className="text-yellow-500">JavaScript</span>. Skilled in building dynamic applications with <span className="text-blue-700">MySQL</span>, <span className="text-green-700">MongoDB</span>, and <span className="text-green-600">Django</span>. Expertise in UI development using <span className="text-blue-400">Tailwind CSS</span> and <span className="text-purple-500">Daisy UI</span>, with experience in version control via <span className="text-red-500">Git</span>, deployment using <span className="text-blue-500">Netlify</span>, and authentication with <span className="text-yellow-400">Firebase</span>.
+                <p className="text-sm lg:text-lg font-medium text-center mb-8 max-w-4xl mx-auto">
+                    I am a developer proficient in <span className="text-blue-400">React.js</span>, <span className="text-green-500">Node.js</span>,<span className="text-yellow-500">JavaScript</span> and <span className='text-blue-700'>Python</span>. Skilled in building dynamic applications with <span className="text-blue-700">MySQL</span>, <span className="text-green-700">MongoDB</span>, and <span className="text-green-600">Django</span>. Expertise in UI development using <span className="text-blue-400">Tailwind CSS</span> and <span className="text-purple-500">Daisy UI</span>, with experience in version control via <span className="text-red-500">Git</span>, deployment using <span className="text-blue-500">Netlify</span>, and authentication with <span className="text-yellow-400">Firebase</span>.
                 </p>
 
                 <div data-aos="fade-up" className="space-y-4 relative">
                     {[row1Skills, row2Skills].map((skills, row) => (
-                        <div key={row} className="overflow-hidden w-full relative p-4">
+                        <div key={row} className="overflow-hidden w-full relative p-2 lg:p-4">
                             <motion.div
                                 className="flex space-x-6 text-center"
                                 animate={{ x: row % 2 === 0 ? ["0%", "-100%"] : ["-100%", "0%"] }}
                                 transition={{
                                     repeat: Infinity,
-                                    duration: 40, // Longer duration for slower animation
+                                    duration: window.innerWidth <= 768 ? 10 : 30, // Faster animation for small devices, slower for large devices
                                     ease: "linear",
                                 }}
                                 style={{ display: "flex", flexWrap: "nowrap" }}
@@ -56,22 +57,21 @@ const Skill = () => {
                                 {[...skills, ...skills].map((skill, index) => (
                                     <motion.div
                                         key={index}
-                                        className="flex flex-col items-center justify-center p-6 rounded-lg bg-gray-800 shadow-lg min-w-[150px] relative"
+                                        className="flex flex-col items-center justify-center p-2 lg:p-4 rounded-lg bg-gray-800 shadow-lg min-w-[120px] sm:min-w-[150px] relative"
                                         whileHover={{
                                             y: -10,
                                             scale: 1.05,
                                             boxShadow: "6px 10px 30px rgba(255,255,255,0.2)",
-                                            borderColor: "#ffffff", // Full border on hover
+                                            borderColor: "#ffffff",
                                         }}
                                         style={{
-                                            // Default fading border on left and bottom sides
                                             borderLeft: "4px solid rgba(255, 255, 255, 0.2)",
                                             borderBottom: "4px solid rgba(255, 255, 255, 0.2)",
-                                            transition: "border 0.3s ease-in-out", // Smooth transition for border
+                                            transition: "border 0.3s ease-in-out",
                                         }}
                                     >
                                         <motion.div
-                                            className="text-6xl mb-3 relative"
+                                            className="text-4xl sm:text-5xl md:text-6xl mb-3 relative"
                                             initial={{ rotate: 0 }}
                                             whileHover={{
                                                 rotate: [0, 10, -10, 0],
@@ -80,7 +80,7 @@ const Skill = () => {
                                         >
                                             {skill.icon}
                                         </motion.div>
-                                        <p className="text-lg font-semibold relative z-10">{skill.name}</p>
+                                        <p className="text-sm sm:text-lg font-semibold relative z-10">{skill.name}</p>
                                     </motion.div>
                                 ))}
                             </motion.div>

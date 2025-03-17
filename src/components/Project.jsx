@@ -116,7 +116,7 @@ const Project = () => {
                         >
                             <div>
                                 <h3 className="text-2xl font-semibold text-amber-200 mb-2">{project.title}</h3>
-                                <p className="text-gray-300 w-xl text-base">{project.description}</p>
+                                <p className="text-gray-300 w-60 lg:w-xl  text-base">{project.description}</p>
                             </div>
                             <button 
                                 onClick={() => setSelectedProject(project)} 
