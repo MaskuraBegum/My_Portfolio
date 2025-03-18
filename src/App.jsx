@@ -9,10 +9,12 @@ import Contact from './components/Contact';
 
 function App() {
   return (
-    <div className='bg-gradient-to-b from-gray-950 via-gray-500 to-gray-950'>
+    <div className='  bg-gradient-to-b from-gray-950 via-gray-500 to-gray-950'>
      
-      <div className='container mx-auto pt-10'>
+      <div className=' overflow-x-hidden w-full pt-10'>
+    
       <Navbar />
+      
         <Header id="header" />
         <About id="about" />
         <Skill id="skill" />

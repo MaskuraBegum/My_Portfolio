@@ -7,10 +7,10 @@ AOS.init();
 
 const About = () => {
     return (
-        <div id="about">
-            <section className="py-10 bg-gradient-to-b via-purple-900 to-gray-900 rounded-t-4xl">
-                <div className="max-w-screen-xl mx-auto px-6">
-                    <div className="flex flex-col gap-6 lg:flex-row items-center justify-center md:space-y-0 space-y-8 md:space-x-12">
+        <div id="about" className="overflow-x-hidden">
+            <section className="w-full py-10 bg-gradient-to-b via-purple-900 to-gray-900">
+                <div className="mx-auto px-6">
+                    <div className="flex flex-col gap-6 md:gap-12 lg:flex-row items-center justify-center">
                         {/* Profile Image */}
                         <div data-aos="zoom-in-right" className="shadow-xl rounded-4xl overflow-hidden">
                             <img 
@@ -22,9 +22,11 @@ const About = () => {
 
                         {/* About Me Paragraph */}
                         <div data-aos="zoom-in-left" className="text-lg text-white max-w-2xl font-medium space-y-4 px-4 sm:px-0">
-                            <h2 className="text-4xl text-center lg:text-left font-extrabold text-amber-200 mb-4">About Me</h2>
-                            <p className="text-gray-200 text-sm lg:text-xl leading-relaxed text-left">
-                                Hi! I’m Maskura, a passionate Aspiring Software Engineer, I specialize in creating dynamic applications using technologies like React and Node.js. With experience in both front-end and back-end development, I enjoy solving complex problems and constantly improving my skills. When I’m not coding, I’m exploring new tech, collaborating with teams, or working on side projects. Feel free to connect!
+                            <h2 className="text-4xl text-center lg:text-left font-extrabold text-amber-200 mb-4">
+                                About Me
+                            </h2>
+                            <p className="text-gray-200 text-sm lg:text-xl text-left">
+                                Hi! I’m Maskura, a passionate Aspiring Software Engineer. I specialize in creating dynamic applications using technologies like React and Node.js. With experience in both front-end and back-end development, I enjoy solving complex problems and constantly improving my skills. When I’m not coding, I’m exploring new tech, collaborating with teams, or working on side projects. Feel free to connect!
                             </p>
                         </div>
                     </div>

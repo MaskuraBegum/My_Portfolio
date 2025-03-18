@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-scroll'; // For smooth scrolling to different sections
+import { Link } from 'react-scroll';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -7,19 +7,19 @@ const Navbar = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <nav className="fixed top-0 left-0 full w-56 lg:w-full  bg-gray-950 bg-opacity-80 text-amber-300 p-2 z-50">
-      <div className="container mx-auto flex flex-row-reverse lg:flex-row justify-between items-center relative">
+    <nav className="fixed w-full top-0 left-0 bg-gray-950 bg-opacity-80 text-amber-300 py-2 
+    lg:py-4 z-50">
+      <div className="container w-full max-w-screen-lg mx-auto flex  justify-between items-center  relative">
         {/* Logo */}
-        <div className="text-2xl font-bold">
-          <a href="#home" className="ml-2 lg:ml-20 text-lg lg:text-2xl text-amber-300">Maskura Begum</a>
+        <div className="text-xl font-bold justify-self-start  ">
+          <a href="#home" className="text-lg lg:text-2xl text-amber-200">
+            Maskura Begum
+          </a>
         </div>
 
-        {/* Mobile Hamburger Icon */}
+        {/* Mobile Menu Button */}
         <div className="lg:hidden">
-          <button
-            onClick={toggleMenu}
-            className="text-amber-300 p-2 hover:text-gray-300 focus:outline-none"
-          >
+          <button onClick={toggleMenu} className="text-amber-300 p-2 hover:text-gray-300 focus:outline-none">
             {isOpen ? (
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
@@ -33,26 +33,24 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Menu */}
-        <div className="hidden lg:flex space-x-6">
+        <div className="hidden lg:flex space-x-6 text-end">
           <NavLinks />
         </div>
 
-        {/* Mobile Dropdown (Smaller Window) */}
-        <div
-          className={`absolute top-full text-center right-2 w-[150px] bg-gray-900 py-4 rounded-lg shadow-lg transition-all duration-300 ${
-            isOpen ? 'block' : 'hidden'
-          } lg:hidden`}
-        >
-          <NavLinks toggleMenu={toggleMenu} />
-        </div>
+        {/* Mobile Dropdown Menu (Now with Solid Background) */}
+        {isOpen && (
+          <div className="absolute top-full right-0 w-[180px] min-w-[150px] bg-gray-900 py-4 rounded-lg shadow-lg lg:hidden">
+            <NavLinks toggleMenu={toggleMenu} />
+          </div>
+        )}
       </div>
     </nav>
   );
 };
 
-// Extracted Menu Links
+// Menu Links Component
 const NavLinks = ({ toggleMenu }) => (
-  <div className="flex flex-col lg:flex-row space-y-2">
+  <div className="flex flex-col lg:flex-row space-y-2 lg:space-y-0">
     {[
       { name: 'Home', link: 'header' },
       { name: 'About', link: 'about' },

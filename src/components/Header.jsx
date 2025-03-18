@@ -4,14 +4,14 @@ import 'animate.css';
 
 const Header = () => {
     return (
-        <div id="header" className='container mx-auto '>
-            <section className="container mx-auto py-10 flex flex-col lg:flex-row items-center justify-between ">
+        <div id="header" className=' '>
+            <section className=" w-full py-10 px-10 flex  flex-col-reverse lg:flex-row items-center justify-normal lg:justify-between ">
                 {/* Content Section */}
-                <div className=" p-12 lg:p-20 text-center lg:text-left space-y-2">
-                    <h1 className="text-3xl lg:text-5xl text-blue-200 font-extrabold animate__animated animate__backInLeft">
+                <div className=" max-w-screen-xl  mx-auto  p-4 lg:p-20 text-center lg:text-left space-y-2">
+                    <h1 className="text-2xl lg:text-5xl text-blue-200 font-extrabold animate__animated animate__backInLeft">
                         Hi, I'm  <span className='text-amber-200'>Maskura Begum</span>
                     </h1>
-                    <p className="text-xl lg:text-2xl text-white font-medium">
+                    <p className="text-lg lg:text-2xl text-white  font-medium">
                         I'm a Aspiring Software Engineer, passionate about building innovative solutions with cutting-edge technologies.
                     </p>
                     <div className='flex gap-4 py-4 items-center lg:items-start justify-center lg:justify-normal'>
@@ -48,7 +48,7 @@ const Header = () => {
                     <div className="flex gap-4 items-center lg:items-start justify-center lg:justify-normal text-center">
                         {/* Contact Me Button */}
                         <a href="mailto:maskura.begum77@gmail.com"
-                            className=" flex px-4 py-4 bg-blue-500 text-white rounded-4xl hover:bg-blue-600 transition"><svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M3.00977 5.83789C3.00977 5.28561 3.45748 4.83789 4.00977 4.83789H20C20.5523 4.83789 21 5.28561 21 5.83789V17.1621C21 18.2667 20.1046 19.1621 19 19.1621H5C3.89543 19.1621 3 18.2667 3 17.1621V6.16211C3 6.11449 3.00333 6.06765 3.00977 6.0218V5.83789ZM5 8.06165V17.1621H19V8.06199L14.1215 12.9405C12.9499 14.1121 11.0504 14.1121 9.87885 12.9405L5 8.06165ZM6.57232 6.80554H17.428L12.7073 11.5263C12.3168 11.9168 11.6836 11.9168 11.2931 11.5263L6.57232 6.80554Z" fill="currentColor" fill-rule="evenodd"/></svg>
+                            className=" flex px-2 lg:px-4 py-2 lg:py-4 bg-blue-500 text-white rounded-4xl hover:bg-blue-600 transition"><svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M3.00977 5.83789C3.00977 5.28561 3.45748 4.83789 4.00977 4.83789H20C20.5523 4.83789 21 5.28561 21 5.83789V17.1621C21 18.2667 20.1046 19.1621 19 19.1621H5C3.89543 19.1621 3 18.2667 3 17.1621V6.16211C3 6.11449 3.00333 6.06765 3.00977 6.0218V5.83789ZM5 8.06165V17.1621H19V8.06199L14.1215 12.9405C12.9499 14.1121 11.0504 14.1121 9.87885 12.9405L5 8.06165ZM6.57232 6.80554H17.428L12.7073 11.5263C12.3168 11.9168 11.6836 11.9168 11.2931 11.5263L6.57232 6.80554Z" fill="currentColor" fill-rule="evenodd"/></svg>
                             Contact Me
                         </a>
 
@@ -56,7 +56,7 @@ const Header = () => {
                         <a 
                             href="/path-to-your-resume.pdf"
                             download="My_Resume.pdf"
-                            className="flex px-4 py-4 bg-green-500 text-white rounded-4xl hover:bg-green-600 transition"><svg className='size-6' viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title/><path d="M18,20H6a1,1,0,0,1,0-2H18a1,1,0,0,1,0,2Z" fill="white"/><path d="M15.92,11.62A1,1,0,0,0,15,11H13V5a1,1,0,0,0-2,0v6H9a1,1,0,0,0-.92.62,1,1,0,0,0,.21,1.09l3,3a1,1,0,0,0,.33.21.94.94,0,0,0,.76,0,1,1,0,0,0,.33-.21l3-3A1,1,0,0,0,15.92,11.62Z" fill="white"/></svg>
+                            className="flex px-2 lg:px-4 py-2 lg:py-4 bg-green-500 text-white rounded-4xl hover:bg-green-600 transition"><svg className='size-6' viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title/><path d="M18,20H6a1,1,0,0,1,0-2H18a1,1,0,0,1,0,2Z" fill="white"/><path d="M15.92,11.62A1,1,0,0,0,15,11H13V5a1,1,0,0,0-2,0v6H9a1,1,0,0,0-.92.62,1,1,0,0,0,.21,1.09l3,3a1,1,0,0,0,.33.21.94.94,0,0,0,.76,0,1,1,0,0,0,.33-.21l3-3A1,1,0,0,0,15.92,11.62Z" fill="white"/></svg>
                             Get Resume
                         </a>
                     </div>
@@ -66,7 +66,7 @@ const Header = () => {
                 <img
                     src="https://i.ibb.co.com/bM6Db8Rs/hero-Image.png"
                     alt="Hero image of me"
-                    className="animate__animated animate__flip border-amber-400 border-dashed border-b-1 border-l-1 w-36 md:w-full  m-4 rounded-full"
+                    className="animate__animated animate__flip border-amber-400 border-dashed border-b-1 border-l-1 w-40 md:w-[500px]  m-4 rounded-full"
                 />
 
                 {/* Blurring effects */}
