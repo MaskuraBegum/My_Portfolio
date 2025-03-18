@@ -15,7 +15,7 @@ const educationData = [
     emoji: "🏫",
     title: "College",
     institution: "Bangladesh Gas Fields School and College",
-    department: "HSC in Science",
+    department: "Higher Secondary Certificate(Science)",
     duration: "2020",
   },
   {
@@ -23,7 +23,7 @@ const educationData = [
     emoji: "📚",
     title: "High School",
     institution: "Sabera Sobhan Government Girls High School",
-    department: "SSC in Science",
+    department: "Secondary School Certificate(Science)",
     duration: "2018",
   },
 ];
@@ -51,7 +51,6 @@ const Education = () => {
             >
               {educationData[0].emoji}
             </motion.div>
-            <h3 className="text-2xl font-semibold text-green-400">{educationData[0].title}</h3>
             <p className="text-2xl font-bold text-gray-300">{educationData[0].institution}</p>
             <p className="text-gray-300 text-2xl">{educationData[0].department}</p>
             <p className="text-gray-300 text-lg">{educationData[0].duration}</p>
@@ -78,7 +77,6 @@ const Education = () => {
             >
               {educationData[1].emoji}
             </motion.div>
-            <h3 className="text-2xl font-semibold text-green-400">{educationData[1].title}</h3>
             <p className="text-2xl font-bold text-gray-300">{educationData[1].institution}</p>
             <p className="text-gray-300 text-2xl">{educationData[1].department}</p>
             <p className="text-gray-300 text-lg">{educationData[1].duration}</p>
@@ -104,7 +102,6 @@ const Education = () => {
             >
               {educationData[2].emoji}
             </motion.div>
-            <h3 className="text-2xl font-semibold text-green-400">{educationData[2].title}</h3>
             <p className="text-xl font-bold text-gray-300">{educationData[2].institution}</p>
             <p className="text-gray-300 text-xl">{educationData[2].department}</p>
             <p className="text-gray-300 text-lg">{educationData[2].duration}</p>

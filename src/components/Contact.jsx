@@ -119,13 +119,13 @@ const Contact = () => {
             </p>
 
             <div className="flex gap-6 mt-4 flex-wrap justify-start">
-              <a href="https://www.facebook.com/yourprofile" target="_blank" rel="noopener noreferrer" className="text-amber-300 hover:text-amber-400">
+              <a href="https://www.facebook.com/maskura.islam.313" target="_blank" rel="noopener noreferrer" className="text-amber-300 hover:text-amber-400">
                 <FaFacebook size={30} />
               </a>
-              <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="text-amber-300 hover:text-amber-400">
+              <a href="https://github.com/MaskuraBegum" target="_blank" rel="noopener noreferrer" className="text-amber-300 hover:text-amber-400">
                 <FaGithub size={30} />
               </a>
-              <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className="text-amber-300 hover:text-amber-400">
+              <a href="https://www.linkedin.com/in/maskura-begum/" target="_blank" rel="noopener noreferrer" className="text-amber-300 hover:text-amber-400">
                 <FaLinkedin size={30} />
               </a>
             </div>

@@ -1,11 +1,11 @@
 import React from 'react';
 import { motion } from "framer-motion";
 import { FaReact, FaNodeJs, FaDatabase, FaHtml5, FaCss3Alt, FaJs, FaGitAlt, FaGithub } from "react-icons/fa";
-import { SiTailwindcss, SiDaisyui, SiBootstrap, SiPython, SiDjango, SiMysql, SiFirebase } from "react-icons/si";
+import { SiTailwindcss, SiDaisyui, SiBootstrap, SiPython, SiDjango, SiMysql, SiFirebase, SiFigma, SiCplusplus } from "react-icons/si";
 import { SiExpress } from "react-icons/si";
 import { SiMongodb } from "react-icons/si";
 import AOS from 'aos';
-import 'aos/dist/aos.css'; 
+import 'aos/dist/aos.css';
 import 'animate.css';
 AOS.init();
 
@@ -18,6 +18,7 @@ const row1Skills = [
     { name: "JavaScript", icon: <FaJs className="text-yellow-500" /> },
     { name: "Tailwind CSS", icon: <SiTailwindcss className="text-blue-400" /> },
     { name: "Daisy UI", icon: <SiDaisyui className="text-purple-500" /> },
+    { name: "Figma", icon: <SiFigma className="text-pink-500" /> },
 ];
 
 const row2Skills = [
@@ -29,6 +30,7 @@ const row2Skills = [
     { name: "GitHub", icon: <FaGithub className="text-white" /> },
     { name: "Firebase", icon: <SiFirebase className="text-yellow-500" /> },
     { name: "Mongoose", icon: <SiMongodb className="text-green-700" /> },
+    { name: "C++", icon: <SiCplusplus className="text-blue-500" /> },
 ];
 
 const Skill = () => {
@@ -36,10 +38,16 @@ const Skill = () => {
         <div className='bg-gray-900 p-4'>
             <div className="p-0 lg:p-10 mx-10 text-white overflow-hidden">
                 <h2 className="text-4xl text-amber-200 font-bold text-center mb-6 animate__animated animate__zoomIn">My Skills</h2>
-                <p className="text-sm lg:text-lg font-medium text-center mb-8 max-w-4xl mx-auto">
-                    I am a developer proficient in <span className="text-blue-400">React.js</span>, <span className="text-green-500">Node.js</span>,<span className="text-yellow-500">JavaScript</span> and <span className='text-blue-700'>Python</span>. Skilled in building dynamic applications with <span className="text-blue-700">MySQL</span>, <span className="text-green-700">MongoDB</span>, and <span className="text-green-600">Django</span>. Expertise in UI development using <span className="text-blue-400">Tailwind CSS</span> and <span className="text-purple-500">Daisy UI</span>, with experience in version control via <span className="text-red-500">Git</span>, deployment using <span className="text-blue-500">Netlify</span>, and authentication with <span className="text-yellow-400">Firebase</span>.
+                <p className="text-sm lg:text-lg text-left lg:text-center font-medium mb-8 max-w-4xl mx-auto">
+                    I'm skilled in <span className="text-blue-400">React.js</span>, <span className="text-green-500">Node.js</span>,
+                    <span className="text-yellow-500"> JavaScript</span>, <span className="text-blue-700">Python</span>,
+                    <span className="text-blue-700"> MySQL</span>, <span className="text-green-700">MongoDB</span>, and
+                    <span className="text-green-600"> Django</span>. I build UIs with <span className="text-blue-400">Tailwind CSS</span>,
+                    <span className="text-purple-500"> Daisy UI</span>, or <span className='text-purple-600'>Bootstrap</span> and manage version control with <span className="text-red-500">Git</span>.
+                    I use <span className="text-yellow-400">Firebase</span> for authentication, <span className="text-blue-500">Netlify</span> for
+                    deployment, and <span className="text-pink-500">Figma</span> for UI/UX design. Experienced in
+                    <span className="text-blue-500"> C++</span> for problem-solving.
                 </p>
-
                 <div data-aos="fade-up" className="space-y-4 relative">
                     {[row1Skills, row2Skills].map((skills, row) => (
                         <div key={row} className="overflow-hidden w-full relative p-2 lg:p-4">
@@ -48,7 +56,7 @@ const Skill = () => {
                                 animate={{ x: row % 2 === 0 ? ["0%", "-100%"] : ["-100%", "0%"] }}
                                 transition={{
                                     repeat: Infinity,
-                                    duration: 40, // Default transition duration for large devices
+                                    duration: 35,
                                     ease: "linear",
                                 }}
                                 style={{ display: "flex", flexWrap: "nowrap" }}

@@ -95,7 +95,7 @@ const Project = () => {
     return (
         <div id="projects" className="relative flex flex-col py-16 px-6 md:px-12 lg:px-20 bg-gray-900 text-white">
             <div className="text-center mb-12">
-                <h2 className="text-4xl sm:text-5xl font-bold text-amber-200 mb-4">My Projects</h2>
+                <h2 className="text-4xl sm:text-4xl font-bold text-amber-200 mb-4">My Projects</h2>
                 <p className="text-sm sm:text-xl text-gray-300 max-w-3xl mx-auto">
                     These are a few handpicked projects that reflect my skills and expertise.
                 </p>

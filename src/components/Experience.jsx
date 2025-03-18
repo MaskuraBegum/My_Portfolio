@@ -3,13 +3,13 @@ import { motion } from "framer-motion";
 
 const Experience = () => {
   return (
-    <section id="experience" className="py-16 bg-gradient-to-b from-gray-900 to-gray-800">
+    <section id="experience" className=" conatiner mx-auto py-16 bg-gradient-to-b from-gray-900 to-gray-800">
       <div className="max-w-7xl mx-auto text-center text-amber-300">
-        <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-6">
+        <h2 className="text-xl sm:text-4xl font-extrabold tracking-tight mb-6">
           My Journey of Growth
         </h2>
-        <p className="mt-4 text-lg text-white/80 max-w-3xl mx-auto">
-          While I may not have traditional work experience yet, my journey as a passionate learner and creator has been nothing short of exciting. My passion for technology, problem-solving, and continuous learning has been my driving force. Each step forward has been a learning experience, refining my skills and preparing me for the future.
+        <p className="mt-4 text-sm lg:text-lg text-white/80 max-w-2xl lg:max-w-4xl mx-auto">
+          While I may not have traditional work experience yet, but my journey as a passionate learner and creator has been nothing short of exciting. My passion for technology, problem-solving, and continuous learning has been my driving force. Each step forward has been a learning experience, refining my skills and preparing me for the future.
         </p>
 
         <div className="m-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
@@ -67,7 +67,7 @@ const Experience = () => {
         </div>
 
         <div className="mt-16 max-w-3xl mx-auto">
-          <p className="text-lg text-white/90 leading-relaxed">
+          <p className="text-sm lg:text-lg text-white/90 leading-relaxed">
             My journey is just beginning, but I am excited to continue growing and contributing. I am eager to apply my skills to real-world challenges and bring innovative solutions to the table. Every project, collaboration, and challenge is a stepping stone towards becoming the software engineer I aspire to be.
           </p>
         </div>
