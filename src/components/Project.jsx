@@ -93,7 +93,7 @@ const Project = () => {
     }, [selectedProject]);
 
     return (
-        <div id="projects" className="relative flex flex-col py-16 px-6 md:px-12 lg:px-20 bg-gray-900 text-white">
+        <div id="project" className="relative flex flex-col py-16 px-6 md:px-12 lg:px-20 bg-gray-900 text-white">
             <div className="text-center mb-12">
                 <h2 className="text-4xl sm:text-4xl font-bold text-amber-200 mb-4">My Projects</h2>
                 <p className="text-sm sm:text-xl text-gray-300 max-w-3xl mx-auto">

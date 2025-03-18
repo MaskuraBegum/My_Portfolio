@@ -4,7 +4,7 @@ import 'animate.css';
 
 const Header = () => {
     return (
-        <div className='container mx-auto '>
+        <div id="header" className='container mx-auto '>
             <section className="container mx-auto py-10 flex flex-col lg:flex-row items-center justify-between ">
                 {/* Content Section */}
                 <div className=" p-12 lg:p-20 text-center lg:text-left space-y-2">

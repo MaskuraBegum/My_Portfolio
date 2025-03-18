@@ -7,7 +7,7 @@ AOS.init();
 
 const About = () => {
     return (
-        <div>
+        <div id="about">
             <section className="py-10 bg-gradient-to-b via-purple-900 to-gray-900 rounded-t-4xl">
                 <div className="max-w-screen-xl mx-auto px-6">
                     <div className="flex flex-col gap-6 lg:flex-row items-center justify-center md:space-y-0 space-y-8 md:space-x-12">

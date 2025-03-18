@@ -35,7 +35,7 @@ const row2Skills = [
 
 const Skill = () => {
     return (
-        <div className='bg-gray-900 p-4'>
+        <div id='skill' className='bg-gray-900 p-4'>
             <div className="p-0 lg:p-10 mx-10 text-white overflow-hidden">
                 <h2 className="text-4xl text-amber-200 font-bold text-center mb-6 animate__animated animate__zoomIn">My Skills</h2>
                 <p className="text-sm lg:text-lg text-left lg:text-center font-medium mb-8 max-w-4xl mx-auto">
