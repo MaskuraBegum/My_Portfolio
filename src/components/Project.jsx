@@ -11,7 +11,7 @@ const projects = [
     {
         title: "Instant Chef 🍳",
         role: "Backend Developer",
-        description: "A smart recipe recommendation platform based on available ingredients.",
+        description: "A smart recipe recommendation platform based on available ingredients. Juniper AI suggests ingredients, lets users save favorite recipes.",
         summary: {
             overview: "Instant Chef helps users find recipes based on available ingredients. As a backend developer of the project I implemented",
             features: [
@@ -65,7 +65,7 @@ const projects = [
       {
         title: "P-Ticket 🎟️",
         role: "Front-End Developer",
-        description: "A modern and user-friendly online ticket booking platform designed for daily commuting, allowing users to select routes, book seats, and manage reservations.",
+        description: "A modern and user-friendly online ticket booking platform for daily commuting, allowing users to select routes, book seats, and manage reservations.",
         summary: {
           overview: "P-Ticket offers a seamless experience for booking seats with dynamic seat selection, price calculation, and real-time updates.",
           features: [
@@ -106,16 +106,16 @@ const Project = () => {
                     <img src="/resource/aboutImage.png" alt="Project Representation" className="w-96 lg:w-[650px] h-full lg:h-[420px] rounded-lg shadow-lg mb-4" />
                 </div>
 
-                <div className="flex flex-col items-center p-4 gap-6 w-full">
+                <div className="grid grid-cols-2 lg:grid-cols-1 gap-2 lg:gap-6 w-full ">
                     {projects.map((project, index) => (
                         <motion.div 
                             key={index} 
-                            className="bg-gray-800 rounded-xl p-6 shadow-lg w-full flex flex-col relative hover:shadow-2xl transition-transform duration-500 hover:scale-105"
+                            className="bg-gray-800 rounded-xl p-4 lg:p-6 shadow-lg w-full flex flex-col relative hover:shadow-2xl transition-transform duration-500 hover:scale-105"
                             whileTap={{ scale: 0.95 }}
                         >
-                            <h3 className="text-2xl font-semibold text-amber-200 mb-2">{project.title}</h3>
-                            <p className="text-gray-300 w-full lg:w-xl text-base">{project.description}</p>
-                            <div className="flex justify-end mt-4">
+                            <h3 className="text-md lg:text-2xl  font-semibold text-amber-200 mb-2">{project.title}</h3>
+                            <p className="text-gray-300 w-full lg:w-xl h-32 lg:h-full text-xs lg:text-lg">{project.description}</p>
+                            <div className="flex justify-end mt-2 lg:mt-4">
                                 <button 
                                     onClick={() => setSelectedProject(project)} 
                                     className="bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-400 transition-all"

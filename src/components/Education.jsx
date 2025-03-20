@@ -22,7 +22,7 @@ const educationData = [
     id: 3,
     emoji: "📚",
     title: "High School",
-    institution: "Sabera Sobhan Government Girls High School",
+    institution: "Sabera Sobhan Govt. Girls High School",
     department: "Secondary School Certificate(Science)",
     duration: "2018",
   },
@@ -39,20 +39,20 @@ const Education = () => {
           {/* University Card (First Row) */}
           <motion.div
             key={educationData[0].id}
-            className="bg-gray-800 p-6 rounded-2xl shadow-xl flex flex-col items-center text-center hover:scale-105 hover:shadow-lg transition-all duration-300 col-span-1 md:col-span-3 relative overflow-hidden"
+            className="bg-gray-800 p-2 lg:p-6 rounded-2xl shadow-xl flex flex-col items-center text-center hover:scale-105 hover:shadow-lg transition-all duration-300 col-span-1 md:col-span-3 relative overflow-hidden"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
             <motion.div
-              className="text-5xl mb-4"
+              className="text-5xl mb-2 lg:mb-4"
               animate={{ y: [0, -5, 0] }}
               transition={{ duration: 1.2, repeat: Infinity, repeatType: "reverse" }}
             >
               {educationData[0].emoji}
             </motion.div>
-            <p className="text-2xl font-bold text-gray-300">{educationData[0].institution}</p>
-            <p className="text-gray-300 text-2xl">{educationData[0].department}</p>
+            <p className="text-lg lg:text-2xl font-bold text-gray-300">{educationData[0].institution}</p>
+            <p className="text-gray-300 text-lg lg:text-2xl">{educationData[0].department}</p>
             <p className="text-gray-300 text-lg">{educationData[0].duration}</p>
 
             {/* Flip Animation */}
@@ -65,20 +65,20 @@ const Education = () => {
           {/* College and High School Cards (Second Row) */}
           <motion.div
             key={educationData[1].id}
-            className="bg-gray-800 p-6 rounded-2xl shadow-xl flex flex-col items-center text-center hover:scale-105 hover:shadow-lg transition-all duration-300 col-span-1 md:col-span-2 relative overflow-hidden"
+            className="bg-gray-800 p-2 lg:p-6 rounded-2xl shadow-xl flex flex-col items-center text-center hover:scale-105 hover:shadow-lg transition-all duration-300 col-span-1 md:col-span-2 relative overflow-hidden"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <motion.div
-              className="text-5xl mb-4"
+              className="text-5xl mb-2 lg:mb-4"
               animate={{ y: [0, -5, 0] }}
               transition={{ duration: 1.2, repeat: Infinity, repeatType: "reverse" }}
             >
               {educationData[1].emoji}
             </motion.div>
-            <p className="text-2xl font-bold text-gray-300">{educationData[1].institution}</p>
-            <p className="text-gray-300 text-2xl">{educationData[1].department}</p>
+            <p className="text-lg lg:text-2xl font-bold text-gray-300">{educationData[1].institution}</p>
+            <p className="text-gray-300 ttext-lg lg:text-2xl">{educationData[1].department}</p>
             <p className="text-gray-300 text-lg">{educationData[1].duration}</p>
 
             {/* Flip Animation */}
@@ -90,19 +90,19 @@ const Education = () => {
 
           <motion.div
             key={educationData[2].id}
-            className="bg-gray-800 p-6 rounded-2xl shadow-xl flex flex-col items-center text-center hover:scale-105 hover:shadow-lg transition-all duration-300 col-span-1 md:col-span-1 relative overflow-hidden"
+            className="bg-gray-800 p-2 lg:p-6 rounded-2xl shadow-xl flex flex-col items-center text-center hover:scale-105 hover:shadow-lg transition-all duration-300 col-span-1 md:col-span-1 relative overflow-hidden"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <motion.div
-              className="text-5xl mb-4"
+              className="text-5xl mb-2 lg:mb-4"
               animate={{ y: [0, -5, 0] }}
               transition={{ duration: 1.2, repeat: Infinity, repeatType: "reverse" }}
             >
               {educationData[2].emoji}
             </motion.div>
-            <p className="text-xl font-bold text-gray-300">{educationData[2].institution}</p>
+            <p className="text-lg lg:text-2xl font-bold text-gray-300">{educationData[2].institution}</p>
             <p className="text-gray-300 text-xl">{educationData[2].department}</p>
             <p className="text-gray-300 text-lg">{educationData[2].duration}</p>
 
