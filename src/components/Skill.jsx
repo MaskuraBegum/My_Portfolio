@@ -36,7 +36,7 @@ const row2Skills = [
 const Skill = () => {
     return (
         <div id='skill' className='bg-gray-900 p-4 overflow-hidden'>
-            <div className="p-0 lg:p-10 mx-10 text-white">
+            <div className="p-0 lg:p-10 mx-2 lg:mx-10 text-white">
                 <h2 className="text-4xl text-amber-200 font-bold text-center mb-6 animate__animated animate__zoomIn">My Skills</h2>
                 <p className="text-sm lg:text-lg text-left lg:text-center font-medium mb-8 max-w-4xl mx-auto">
                     I'm skilled in <span className="text-blue-400">React.js</span>, <span className="text-green-500">Node.js</span>,

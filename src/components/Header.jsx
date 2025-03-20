@@ -54,8 +54,8 @@ const Header = () => {
 
                         {/* Get Resume Button */}
                         <a 
-                            href="/path-to-your-resume.pdf"
-                            download="My_Resume.pdf"
+                            href="/resource/Maskura.pdf"
+                            download="Maskura Befum.pdf"
                             className="flex px-2 lg:px-4 py-2 lg:py-4 bg-green-500 text-white rounded-4xl hover:bg-green-600 transition"><svg className='size-6' viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title/><path d="M18,20H6a1,1,0,0,1,0-2H18a1,1,0,0,1,0,2Z" fill="white"/><path d="M15.92,11.62A1,1,0,0,0,15,11H13V5a1,1,0,0,0-2,0v6H9a1,1,0,0,0-.92.62,1,1,0,0,0,.21,1.09l3,3a1,1,0,0,0,.33.21.94.94,0,0,0,.76,0,1,1,0,0,0,.33-.21l3-3A1,1,0,0,0,15.92,11.62Z" fill="white"/></svg>
                             Get Resume
                         </a>
