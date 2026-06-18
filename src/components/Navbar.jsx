@@ -20,18 +20,20 @@ const Navbar = () => {
       backdropFilter: "blur(16px)",
       borderBottom: scrolled ? "1px solid rgba(99,102,241,0.15)" : "1px solid transparent",
       transition: "all 0.3s ease",
-      padding: "0 24px",
+      padding: "0 16px",
+      boxSizing: "border-box",
     }}>
       <div style={{
         maxWidth: "1200px", margin: "0 auto",
         display: "flex", alignItems: "center", justifyContent: "space-between",
-        height: "64px",
+        height: "60px",
       }}>
 
         {/* Logo */}
         <a href="#header" style={{
-          fontWeight: "800", fontSize: "clamp(1rem, 2vw, 1.2rem)",
+          fontWeight: "800", fontSize: "clamp(0.9rem, 2vw, 1.2rem)",
           color: "#F1F5F9", textDecoration: "none", letterSpacing: "-0.02em",
+          flexShrink: 0,
         }}>
           Maskura{" "}
           <span style={{
@@ -41,19 +43,20 @@ const Navbar = () => {
         </a>
 
         {/* Desktop links */}
-        <div className="hidden lg:flex" style={{ gap: "4px", alignItems: "center" }}>
+        <div style={{ display: "flex", gap: "2px", alignItems: "center" }} className="desktop-nav">
           <NavLinks />
         </div>
 
         {/* Mobile hamburger */}
         <button
           onClick={toggleMenu}
-          className="lg:hidden"
+          className="mobile-menu-btn"
           style={{
             background: "rgba(99,102,241,0.1)", border: "1px solid rgba(99,102,241,0.2)",
             borderRadius: "10px", padding: "8px",
             color: "#A78BFA", cursor: "pointer", lineHeight: 0,
             transition: "all 0.2s ease",
+            display: "none",
           }}
           onMouseEnter={e => e.currentTarget.style.background = "rgba(99,102,241,0.2)"}
           onMouseLeave={e => e.currentTarget.style.background = "rgba(99,102,241,0.1)"}
@@ -82,19 +85,30 @@ const Navbar = () => {
           <NavLinks toggleMenu={toggleMenu} mobile />
         </div>
       )}
+
+      <style>{`
+        @media (max-width: 1024px) {
+          .desktop-nav { display: none !important; }
+          .mobile-menu-btn { display: flex !important; }
+        }
+        @media (min-width: 1025px) {
+          .mobile-menu-btn { display: none !important; }
+          .desktop-nav { display: flex !important; }
+        }
+      `}</style>
     </nav>
   );
 };
 
 const navItems = [
-  { name: 'Home',       link: 'header' },
-  { name: 'About',      link: 'about' },
-  { name: 'Skills',     link: 'skill' },
-  { name: 'Projects',   link: 'project' },
-  { name: 'Achievements',   link: 'achievement' },
-  { name: 'Education',  link: 'education' },
-  { name: 'Experience', link: 'experience' },
-  { name: 'Contact',    link: 'contact' },
+  { name: 'Home',         link: 'header' },
+  { name: 'About',        link: 'about' },
+  { name: 'Skills',       link: 'skill' },
+  { name: 'Projects',     link: 'project' },
+  { name: 'Achievements', link: 'achievement' },
+  { name: 'Education',    link: 'education' },
+  { name: 'Experience',   link: 'experience' },
+  { name: 'Contact',      link: 'contact' },
 ];
 
 const NavLinks = ({ toggleMenu, mobile }) => (
@@ -109,18 +123,19 @@ const NavLinks = ({ toggleMenu, mobile }) => (
         to={item.link}
         smooth={true}
         duration={500}
-        offset={-64}
+        offset={-60}
         onClick={toggleMenu}
         style={{
-          padding: mobile ? "10px 16px" : "8px 14px",
+          padding: mobile ? "10px 16px" : "8px 12px",
           borderRadius: "10px",
-          fontSize: "14px", fontWeight: "500",
+          fontSize: "13px", fontWeight: "500",
           color: "#94A3B8",
           cursor: "pointer",
           transition: "all 0.2s ease",
           display: "block",
           textDecoration: "none",
           userSelect: "none",
+          whiteSpace: "nowrap",
         }}
         onMouseEnter={e => {
           e.currentTarget.style.color = "#F1F5F9";

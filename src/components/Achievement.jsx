@@ -51,7 +51,6 @@ const Achievement = () => {
         let raf;
         let progress = 0;
         const speed = 0.003;
-
         const animate = () => {
             progress = (progress + speed) % 1;
             if (dotRef.current && spineRef.current) {
@@ -65,153 +64,91 @@ const Achievement = () => {
     }, []);
 
     return (
-        <section
-            id="achievement"
-            style={{
-                background: "transparent",
-                padding: "80px 0 100px",
-                position: "relative",
-                overflow: "hidden",
-            }}
-        >
-            {/* Ambient background grid */}
+        <section id="achievement" style={{ background: "transparent", padding: "80px 0 100px", position: "relative", overflow: "hidden" }}>
+
+            {/* Grid */}
             <div style={{
-                position: "absolute",
-                inset: 0,
-                backgroundImage: `
-                    linear-gradient(rgba(99,102,241,0.04) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(99,102,241,0.04) 1px, transparent 1px)
-                `,
-                backgroundSize: "48px 48px",
-                pointerEvents: "none",
+                position: "absolute", inset: 0,
+                backgroundImage: `linear-gradient(rgba(99,102,241,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(99,102,241,0.04) 1px, transparent 1px)`,
+                backgroundSize: "48px 48px", pointerEvents: "none",
             }} />
 
-            <div style={{ maxWidth: "900px", margin: "0 auto", padding: "0 24px", position: "relative" }}>
+            <div style={{ maxWidth: "900px", margin: "0 auto", padding: "0 clamp(16px, 4vw, 24px)", position: "relative", boxSizing: "border-box" }}>
 
                 {/* Header */}
-                <div style={{ textAlign: "center", marginBottom: "72px" }}>
-                    <p style={{
-                        fontSize: "11px",
-                        letterSpacing: "0.2em",
-                        textTransform: "uppercase",
-                        color: "#6366F1",
-                        marginBottom: "12px",
-                        fontFamily: "'Courier New', monospace",
-                    }}>
+                <div style={{ textAlign: "center", marginBottom: "56px" }}>
+                    <p style={{ fontSize: "11px", letterSpacing: "0.2em", textTransform: "uppercase", color: "#6366F1", marginBottom: "12px", fontFamily: "'Courier New', monospace" }}>
                         Recognition & Impact
                     </p>
                     <h2 style={{
-                        fontSize: "clamp(2rem, 5vw, 3.25rem)",
-                        fontWeight: "800",
-                        color: "#F1F5F9",
-                        margin: 0,
-                        lineHeight: 1.1,
-                        letterSpacing: "-0.02em",
+                        fontSize: "clamp(1.8rem, 5vw, 3.25rem)", fontWeight: "800",
+                        color: "#F1F5F9", margin: 0, lineHeight: 1.1, letterSpacing: "-0.02em",
                     }}>
                         Achievements &{" "}
                         <span style={{
                             background: "linear-gradient(135deg, #6366F1, #A78BFA)",
-                            WebkitBackgroundClip: "text",
-                            WebkitTextFillColor: "transparent",
-                            backgroundClip: "text",
-                        }}>
-                            Leadership
-                        </span>
+                            WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
+                        }}>Leadership</span>
                     </h2>
                 </div>
 
-                {/* Timeline */}
-                <div style={{ position: "relative", paddingLeft: "0" }}>
-
-                    {/* Spine line */}
-                    <div
-                        ref={spineRef}
-                        style={{
-                            position: "absolute",
-                            left: "50%",
-                            transform: "translateX(-50%)",
-                            top: 0,
-                            bottom: 0,
-                            width: "2px",
-                            background: "linear-gradient(to bottom, transparent, rgba(99,102,241,0.3) 10%, rgba(99,102,241,0.3) 90%, transparent)",
-                        }}
-                    >
-                        {/* Traveling dot */}
-                        <div
-                            ref={dotRef}
-                            style={{
-                                position: "absolute",
-                                left: "50%",
-                                transform: "translate(-50%, -50%)",
-                                width: "8px",
-                                height: "8px",
-                                borderRadius: "50%",
-                                background: "#6366F1",
-                                boxShadow: "0 0 12px 4px rgba(99,102,241,0.6)",
-                            }}
-                        />
+                {/* Desktop Timeline */}
+                <div className="desktop-timeline" style={{ position: "relative" }}>
+                    {/* Spine */}
+                    <div ref={spineRef} style={{
+                        position: "absolute", left: "50%", transform: "translateX(-50%)",
+                        top: 0, bottom: 0, width: "2px",
+                        background: "linear-gradient(to bottom, transparent, rgba(99,102,241,0.3) 10%, rgba(99,102,241,0.3) 90%, transparent)",
+                    }}>
+                        <div ref={dotRef} style={{
+                            position: "absolute", left: "50%", transform: "translate(-50%, -50%)",
+                            width: "8px", height: "8px", borderRadius: "50%",
+                            background: "#6366F1", boxShadow: "0 0 12px 4px rgba(99,102,241,0.6)",
+                        }} />
                     </div>
 
-                    {/* Achievement cards */}
                     {achievements.map((item, i) => {
                         const isLeft = i % 2 === 0;
                         return (
-                            <div
-                                key={i}
-                                style={{
-                                    display: "flex",
-                                    justifyContent: isLeft ? "flex-start" : "flex-end",
-                                    alignItems: "center",
-                                    marginBottom: "56px",
-                                    position: "relative",
-                                }}
-                            >
-                                {/* Node on spine */}
+                            <div key={i} style={{
+                                display: "flex",
+                                justifyContent: isLeft ? "flex-start" : "flex-end",
+                                alignItems: "center",
+                                marginBottom: "48px",
+                                position: "relative",
+                            }}>
+                                {/* Node */}
                                 <div style={{
-                                    position: "absolute",
-                                    left: "50%",
-                                    transform: "translateX(-50%)",
-                                    zIndex: 3,
-                                    width: "52px",
-                                    height: "52px",
-                                    borderRadius: "50%",
-                                    background: "#0F172A",
-                                    border: `2px solid ${item.accent}`,
+                                    position: "absolute", left: "50%", transform: "translateX(-50%)", zIndex: 3,
+                                    width: "48px", height: "48px", borderRadius: "50%",
+                                    background: "#0F172A", border: `2px solid ${item.accent}`,
                                     boxShadow: `0 0 0 6px ${item.glowColor}, 0 0 20px ${item.glowColor}`,
-                                    display: "flex",
-                                    alignItems: "center",
-                                    justifyContent: "center",
-                                    fontSize: "22px",
-                                    flexShrink: 0,
-                                }}>
-                                    {item.emoji}
-                                </div>
+                                    display: "flex", alignItems: "center", justifyContent: "center",
+                                    fontSize: "20px", flexShrink: 0,
+                                }}>{item.emoji}</div>
 
-                                {/* Connector line from node to card */}
+                                {/* Connector line */}
                                 <div style={{
                                     position: "absolute",
-                                    left: isLeft ? "calc(50% + 26px)" : "auto",
-                                    right: isLeft ? "auto" : "calc(50% + 26px)",
-                                    top: "50%",
-                                    transform: "translateY(-50%)",
-                                    width: "calc(50% - 26px - 24px)",
-                                    height: "1px",
+                                    left: isLeft ? "calc(50% + 24px)" : "auto",
+                                    right: isLeft ? "auto" : "calc(50% + 24px)",
+                                    top: "50%", transform: "translateY(-50%)",
+                                    width: "calc(50% - 24px - 24px)", height: "1px",
                                     background: `linear-gradient(${isLeft ? "to right" : "to left"}, ${item.accent}66, transparent)`,
                                 }} />
 
                                 {/* Card */}
-                                <div
-                                    style={{
-                                        width: "calc(50% - 60px)",
-                                        background: "rgba(15, 23, 42, 0.7)",
-                                        border: `1px solid ${item.accent}33`,
-                                        borderRadius: "16px",
-                                        padding: "24px 28px",
-                                        backdropFilter: "blur(12px)",
-                                        position: "relative",
-                                        transition: "transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease",
-                                        cursor: "default",
-                                    }}
+                                <div style={{
+                                    width: "calc(50% - 56px)",
+                                    background: "rgba(15,23,42,0.7)",
+                                    border: `1px solid ${item.accent}33`,
+                                    borderRadius: "16px",
+                                    padding: "clamp(16px, 3vw, 24px) clamp(18px, 3vw, 28px)",
+                                    backdropFilter: "blur(12px)",
+                                    position: "relative",
+                                    transition: "transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease",
+                                    cursor: "default",
+                                }}
                                     onMouseEnter={e => {
                                         e.currentTarget.style.transform = "translateY(-4px)";
                                         e.currentTarget.style.borderColor = item.accent + "88";
@@ -223,68 +160,69 @@ const Achievement = () => {
                                         e.currentTarget.style.boxShadow = "none";
                                     }}
                                 >
-                                    {/* Tag */}
                                     <span style={{
-                                        display: "inline-block",
-                                        fontSize: "10px",
-                                        letterSpacing: "0.15em",
-                                        textTransform: "uppercase",
-                                        fontWeight: "700",
-                                        color: item.tagColor,
-                                        background: item.tagBg,
-                                        padding: "3px 10px",
-                                        borderRadius: "20px",
-                                        marginBottom: "12px",
-                                        fontFamily: "'Courier New', monospace",
-                                    }}>
-                                        {item.tag}
-                                    </span>
-
-                                    <h3 style={{
-                                        fontSize: "clamp(0.95rem, 2vw, 1.1rem)",
-                                        fontWeight: "700",
-                                        color: "#F1F5F9",
-                                        margin: "0 0 10px",
-                                        lineHeight: 1.3,
-                                    }}>
-                                        {item.title}
-                                    </h3>
-
-                                    <p style={{
-                                        fontSize: "0.875rem",
-                                        color: "#94A3B8",
-                                        margin: 0,
-                                        lineHeight: 1.65,
-                                    }}>
-                                        {item.body}
-                                    </p>
-
-                                    {/* Bottom accent bar */}
-                                    <div style={{
-                                        position: "absolute",
-                                        bottom: 0,
-                                        left: "20px",
-                                        right: "20px",
-                                        height: "2px",
-                                        background: `linear-gradient(to right, transparent, ${item.accent}, transparent)`,
-                                        borderRadius: "2px",
-                                        opacity: 0.6,
-                                    }} />
+                                        display: "inline-block", fontSize: "10px", letterSpacing: "0.15em",
+                                        textTransform: "uppercase", fontWeight: "700", color: item.tagColor,
+                                        background: item.tagBg, padding: "3px 10px", borderRadius: "20px",
+                                        marginBottom: "10px", fontFamily: "'Courier New', monospace",
+                                    }}>{item.tag}</span>
+                                    <h3 style={{ fontSize: "clamp(0.9rem, 1.8vw, 1.05rem)", fontWeight: "700", color: "#F1F5F9", margin: "0 0 8px", lineHeight: 1.3 }}>{item.title}</h3>
+                                    <p style={{ fontSize: "0.85rem", color: "#94A3B8", margin: 0, lineHeight: 1.65 }}>{item.body}</p>
+                                    <div style={{ position: "absolute", bottom: 0, left: "20px", right: "20px", height: "2px", background: `linear-gradient(to right, transparent, ${item.accent}, transparent)`, borderRadius: "2px", opacity: 0.6 }} />
                                 </div>
                             </div>
                         );
                     })}
                 </div>
 
-                {/* Bottom counter strip */}
+                {/* Mobile Timeline (left-aligned) */}
+                <div className="mobile-timeline" style={{ display: "none", flexDirection: "column", gap: "0" }}>
+                    {/* Left spine */}
+                    <div style={{ position: "relative", paddingLeft: "48px" }}>
+                        <div style={{
+                            position: "absolute", left: "20px", top: 0, bottom: 0,
+                            width: "2px", background: "linear-gradient(to bottom, transparent, rgba(99,102,241,0.3) 5%, rgba(99,102,241,0.3) 95%, transparent)",
+                        }} />
+                        {achievements.map((item, i) => (
+                            <div key={i} style={{ position: "relative", marginBottom: "28px" }}>
+                                {/* Node */}
+                                <div style={{
+                                    position: "absolute", left: "-39px", top: "16px",
+                                    width: "38px", height: "38px", borderRadius: "50%",
+                                    background: "#0F172A", border: `2px solid ${item.accent}`,
+                                    boxShadow: `0 0 0 4px ${item.glowColor}`,
+                                    display: "flex", alignItems: "center", justifyContent: "center",
+                                    fontSize: "16px", zIndex: 2,
+                                }}>{item.emoji}</div>
+
+                                {/* Card */}
+                                <div style={{
+                                    background: "rgba(15,23,42,0.7)",
+                                    border: `1px solid ${item.accent}33`,
+                                    borderRadius: "16px",
+                                    padding: "18px 20px",
+                                    position: "relative",
+                                }}>
+                                    <span style={{
+                                        display: "inline-block", fontSize: "10px", letterSpacing: "0.15em",
+                                        textTransform: "uppercase", fontWeight: "700", color: item.tagColor,
+                                        background: item.tagBg, padding: "3px 10px", borderRadius: "20px",
+                                        marginBottom: "8px", fontFamily: "'Courier New', monospace",
+                                    }}>{item.tag}</span>
+                                    <h3 style={{ fontSize: "0.95rem", fontWeight: "700", color: "#F1F5F9", margin: "0 0 8px", lineHeight: 1.3 }}>{item.title}</h3>
+                                    <p style={{ fontSize: "0.85rem", color: "#94A3B8", margin: 0, lineHeight: 1.65 }}>{item.body}</p>
+                                    <div style={{ position: "absolute", bottom: 0, left: "16px", right: "16px", height: "2px", background: `linear-gradient(to right, transparent, ${item.accent}, transparent)`, borderRadius: "2px", opacity: 0.6 }} />
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Stats strip */}
                 <div style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    gap: "48px",
-                    marginTop: "24px",
-                    paddingTop: "48px",
-                    borderTop: "1px solid rgba(99,102,241,0.15)",
-                    flexWrap: "wrap",
+                    display: "flex", justifyContent: "center", gap: "clamp(24px, 5vw, 48px)",
+                    marginTop: "24px", paddingTop: "40px",
+                    borderTop: "1px solid rgba(99,102,241,0.15)", flexWrap: "wrap",
                 }}>
                     {[
                         { value: "2nd", label: "Hackathon placing" },
@@ -292,30 +230,22 @@ const Achievement = () => {
                         { value: "2+", label: "Events volunteered" },
                     ].map((stat, i) => (
                         <div key={i} style={{ textAlign: "center" }}>
-                            <p style={{
-                                fontSize: "2rem",
-                                fontWeight: "800",
-                                color: "#6366F1",
-                                margin: 0,
-                                lineHeight: 1,
-                                letterSpacing: "-0.02em",
-                            }}>{stat.value}</p>
-                            <p style={{
-                                fontSize: "12px",
-                                color: "#64748B",
-                                margin: "6px 0 0",
-                                letterSpacing: "0.05em",
-                            }}>{stat.label}</p>
+                            <p style={{ fontSize: "clamp(1.5rem, 4vw, 2rem)", fontWeight: "800", color: "#6366F1", margin: 0, lineHeight: 1, letterSpacing: "-0.02em" }}>{stat.value}</p>
+                            <p style={{ fontSize: "12px", color: "#64748B", margin: "6px 0 0", letterSpacing: "0.05em" }}>{stat.label}</p>
                         </div>
                     ))}
                 </div>
             </div>
 
-            {/* Mobile responsive */}
             <style>{`
-                @media (max-width: 640px) {
-                    #achievement .timeline-wrapper { padding-left: 0 !important; }
-                }
+              @media (max-width: 600px) {
+                .desktop-timeline { display: none !important; }
+                .mobile-timeline { display: flex !important; }
+              }
+              @media (min-width: 601px) {
+                .desktop-timeline { display: block !important; }
+                .mobile-timeline { display: none !important; }
+              }
             `}</style>
         </section>
     );

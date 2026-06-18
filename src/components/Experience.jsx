@@ -34,7 +34,7 @@ const traits = [
 
 const Experience = () => {
     return (
-        <section id="experience" style={{ position: "relative", overflow: "hidden", padding: "100px 0" }}>
+        <section id="experience" style={{ position: "relative", overflow: "hidden", padding: "80px 0" }}>
             {/* Grid */}
             <div style={{
                 position: "absolute", inset: 0,
@@ -49,7 +49,7 @@ const Experience = () => {
                 pointerEvents: "none",
             }} />
 
-            <div className="max-w-6xl mx-auto px-6" style={{ position: "relative", zIndex: 1 }}>
+            <div style={{ maxWidth: "1152px", margin: "0 auto", padding: "0 clamp(16px, 4vw, 24px)", position: "relative", zIndex: 1, boxSizing: "border-box" }}>
 
                 {/* Heading */}
                 <div style={{ textAlign: "center", marginBottom: "24px" }}>
@@ -57,7 +57,7 @@ const Experience = () => {
                         — Soft Skills & Approach
                     </p>
                     <h2 style={{
-                        fontSize: "clamp(2rem, 5vw, 3rem)", fontWeight: "800",
+                        fontSize: "clamp(1.8rem, 5vw, 3rem)", fontWeight: "800",
                         color: "#F1F5F9", margin: "0 0 16px", lineHeight: 1.1, letterSpacing: "-0.02em",
                     }}>
                         My Journey of{" "}
@@ -66,13 +66,18 @@ const Experience = () => {
                             WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
                         }}>Growth</span>
                     </h2>
-                    <p style={{ fontSize: "clamp(0.9rem, 2vw, 1.05rem)", color: "#94A3B8", maxWidth: "620px", margin: "0 auto 64px", lineHeight: 1.7 }}>
+                    <p style={{ fontSize: "clamp(0.875rem, 2vw, 1.05rem)", color: "#94A3B8", maxWidth: "620px", margin: "0 auto 48px", lineHeight: 1.7 }}>
                         While I may not have traditional work experience yet, my passion for technology, problem-solving, and continuous learning has been my driving force.
                     </p>
                 </div>
 
                 {/* Cards */}
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "20px", marginBottom: "60px" }}>
+                <div style={{
+                    display: "grid",
+                    gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 240px), 1fr))",
+                    gap: "16px",
+                    marginBottom: "40px",
+                }}>
                     {traits.map((trait, i) => (
                         <motion.div
                             key={trait.title}
@@ -84,7 +89,7 @@ const Experience = () => {
                                 background: "rgba(15,23,42,0.75)",
                                 border: `1px solid ${trait.accent}22`,
                                 borderRadius: "20px",
-                                padding: "32px 28px",
+                                padding: "clamp(20px, 3vw, 32px) clamp(18px, 3vw, 28px)",
                                 position: "relative",
                                 overflow: "hidden",
                                 cursor: "default",
@@ -104,16 +109,16 @@ const Experience = () => {
                             <div style={{ position: "absolute", top: 0, left: "20px", right: "20px", height: "2px", background: `linear-gradient(to right, transparent, ${trait.accent}, transparent)`, borderRadius: "2px" }} />
 
                             <div style={{
-                                width: "52px", height: "52px", borderRadius: "14px",
+                                width: "clamp(44px, 7vw, 52px)", height: "clamp(44px, 7vw, 52px)", borderRadius: "14px",
                                 background: trait.accentMuted, border: `1px solid ${trait.accent}33`,
                                 display: "flex", alignItems: "center", justifyContent: "center",
-                                fontSize: "24px", marginBottom: "20px",
+                                fontSize: "clamp(20px, 3vw, 24px)", marginBottom: "18px",
                             }}>{trait.icon}</div>
 
-                            <h3 style={{ margin: "0 0 12px", fontSize: "1.05rem", fontWeight: "700", color: "#F1F5F9" }}>
+                            <h3 style={{ margin: "0 0 10px", fontSize: "clamp(0.95rem, 2vw, 1.05rem)", fontWeight: "700", color: "#F1F5F9" }}>
                                 {trait.title}
                             </h3>
-                            <p style={{ margin: 0, fontSize: "14px", color: "#94A3B8", lineHeight: 1.7 }}>
+                            <p style={{ margin: 0, fontSize: "clamp(13px, 1.8vw, 14px)", color: "#94A3B8", lineHeight: 1.7 }}>
                                 {trait.body}
                             </p>
                         </motion.div>
@@ -125,13 +130,13 @@ const Experience = () => {
                     background: "rgba(15,23,42,0.5)",
                     border: "1px solid rgba(99,102,241,0.2)",
                     borderRadius: "20px",
-                    padding: "36px 40px",
+                    padding: "clamp(20px, 4vw, 36px) clamp(20px, 4vw, 40px)",
                     textAlign: "center",
                     position: "relative",
                     overflow: "hidden",
                 }}>
                     <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: "4px", background: "linear-gradient(to bottom, #6366F1, #10B981)" }} />
-                    <p style={{ margin: 0, fontSize: "clamp(0.95rem, 2vw, 1.1rem)", color: "#CBD5E1", lineHeight: 1.8, fontStyle: "italic" }}>
+                    <p style={{ margin: 0, fontSize: "clamp(0.9rem, 2vw, 1.1rem)", color: "#CBD5E1", lineHeight: 1.8, fontStyle: "italic" }}>
                         "My journey is just beginning — but I'm excited to grow, contribute, and bring innovative solutions to every real-world challenge ahead."
                     </p>
                 </div>

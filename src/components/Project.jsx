@@ -28,7 +28,7 @@ const projects = [
     },
     {
         title: "RoyalNest 🏡",
-        role: "Front-End Develope",
+        role: "Front-End Developer",
         roleColor: "#6366F1",
         description: "A luxury real estate platform that offers exclusive access to prestigious properties tailored to exceed expectations.",
         summary: {
@@ -47,7 +47,7 @@ const projects = [
     },
     {
         title: "Book Vibe 📚",
-        role: "Front-End Develope",
+        role: "Front-End Developer",
         roleColor: "#F59E0B",
         description: "A dynamic book exploration platform that allows users to discover, categorize, and manage their reading lists effortlessly.",
         summary: {
@@ -95,7 +95,7 @@ const Project = () => {
     }, [selectedProject]);
 
     return (
-        <section id="project" style={{ position: "relative", overflow: "hidden", padding: "100px 0" }}>
+        <section id="project" style={{ position: "relative", overflow: "hidden", padding: "80px 0" }}>
 
             {/* Grid texture */}
             <div style={{
@@ -110,15 +110,15 @@ const Project = () => {
                 pointerEvents: "none",
             }} />
 
-            <div className="max-w-6xl mx-auto px-6" style={{ position: "relative", zIndex: 1 }}>
+            <div style={{ maxWidth: "1152px", margin: "0 auto", padding: "0 clamp(16px, 4vw, 24px)", position: "relative", zIndex: 1, boxSizing: "border-box" }}>
 
                 {/* Heading */}
-                <div style={{ textAlign: "center", marginBottom: "64px" }}>
+                <div style={{ textAlign: "center", marginBottom: "48px" }}>
                     <p style={{ fontSize: "11px", letterSpacing: "0.2em", textTransform: "uppercase", color: "#6366F1", marginBottom: "12px", fontFamily: "'Courier New', monospace" }}>
                         — Portfolio
                     </p>
                     <h2 style={{
-                        fontSize: "clamp(2rem, 5vw, 3rem)", fontWeight: "800",
+                        fontSize: "clamp(1.8rem, 5vw, 3rem)", fontWeight: "800",
                         color: "#F1F5F9", margin: "0 0 16px", lineHeight: 1.1, letterSpacing: "-0.02em",
                     }}>
                         My{" "}
@@ -127,17 +127,13 @@ const Project = () => {
                             WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
                         }}>Projects</span>
                     </h2>
-                    <p style={{ fontSize: "1rem", color: "#94A3B8", maxWidth: "480px", margin: "0 auto", lineHeight: 1.7 }}>
+                    <p style={{ fontSize: "clamp(0.875rem, 2vw, 1rem)", color: "#94A3B8", maxWidth: "480px", margin: "0 auto", lineHeight: 1.7 }}>
                         A few handpicked projects that reflect my skills and expertise.
                     </p>
                 </div>
 
-                {/* Project grid — 2 columns */}
-                <div style={{
-                    display: "grid",
-                    gridTemplateColumns: "repeat(2, 1fr)",
-                    gap: "28px",
-                }}>
+                {/* Project grid */}
+                <div className="project-grid">
                     {projects.map((project, index) => (
                         <motion.div
                             key={index}
@@ -152,7 +148,7 @@ const Project = () => {
                                 background: "rgba(15,23,42,0.75)",
                                 border: `1px solid ${project.accent}22`,
                                 borderRadius: "24px",
-                                padding: "36px 32px",
+                                padding: "clamp(20px, 4vw, 36px) clamp(18px, 3vw, 32px)",
                                 display: "flex", flexDirection: "column",
                                 position: "relative", overflow: "hidden",
                                 cursor: "default",
@@ -187,29 +183,29 @@ const Project = () => {
                                 {project.role}
                             </span>
 
-                            <h3 style={{ margin: "0 0 12px", fontSize: "1.25rem", fontWeight: "700", color: "#F1F5F9" }}>
+                            <h3 style={{ margin: "0 0 12px", fontSize: "clamp(1rem, 2.5vw, 1.25rem)", fontWeight: "700", color: "#F1F5F9" }}>
                                 {project.title}
                             </h3>
-                            <p style={{ margin: "0 0 24px", fontSize: "15px", color: "#94A3B8", lineHeight: 1.75, flex: 1 }}>
+                            <p style={{ margin: "0 0 24px", fontSize: "clamp(13px, 1.8vw, 15px)", color: "#94A3B8", lineHeight: 1.75, flex: 1 }}>
                                 {project.description}
                             </p>
 
                             {/* Tech pills */}
-                            <div style={{ display: "flex", flexWrap: "wrap", gap: "7px", marginBottom: "24px" }}>
+                            <div style={{ display: "flex", flexWrap: "wrap", gap: "7px", marginBottom: "20px" }}>
                                 {project.techStack.slice(0, 4).map((tech, i) => (
                                     <span key={i} style={{
-                                        fontSize: "12px", color: "#64748B",
+                                        fontSize: "11px", color: "#64748B",
                                         background: "rgba(99,102,241,0.08)",
                                         border: "1px solid rgba(99,102,241,0.15)",
-                                        padding: "3px 12px", borderRadius: "20px",
+                                        padding: "3px 10px", borderRadius: "20px",
                                     }}>{tech}</span>
                                 ))}
                                 {project.techStack.length > 4 && (
                                     <span style={{
-                                        fontSize: "12px", color: "#64748B",
+                                        fontSize: "11px", color: "#64748B",
                                         background: "rgba(99,102,241,0.08)",
                                         border: "1px solid rgba(99,102,241,0.15)",
-                                        padding: "3px 12px", borderRadius: "20px",
+                                        padding: "3px 10px", borderRadius: "20px",
                                     }}>+{project.techStack.length - 4}</span>
                                 )}
                             </div>
@@ -218,11 +214,11 @@ const Project = () => {
                                 <button
                                     onClick={() => setSelectedProject(project)}
                                     style={{
-                                        flex: 1, padding: "12px",
+                                        flex: 1, padding: "11px",
                                         background: `linear-gradient(135deg, ${project.accent}22, ${project.accent}11)`,
                                         border: `1px solid ${project.accent}44`,
                                         borderRadius: "12px",
-                                        color: project.accent, fontWeight: "600", fontSize: "14px",
+                                        color: project.accent, fontWeight: "600", fontSize: "13px",
                                         cursor: "pointer", transition: "all 0.2s ease",
                                     }}
                                     onMouseEnter={e => e.currentTarget.style.background = project.accent + "33"}
@@ -231,18 +227,18 @@ const Project = () => {
                                     Details
                                 </button>
                                 <a href={project.liveLink} target="_blank" rel="noopener noreferrer" style={{
-                                    flex: 1, padding: "12px",
+                                    flex: 1, padding: "11px",
                                     background: "rgba(99,102,241,0.12)",
                                     border: "1px solid rgba(99,102,241,0.3)",
                                     borderRadius: "12px",
-                                    color: "#6366F1", fontWeight: "600", fontSize: "14px",
+                                    color: "#6366F1", fontWeight: "600", fontSize: "13px",
                                     textDecoration: "none", textAlign: "center",
                                     transition: "all 0.2s ease",
                                 }}
                                     onMouseEnter={e => e.currentTarget.style.background = "rgba(99,102,241,0.22)"}
                                     onMouseLeave={e => e.currentTarget.style.background = "rgba(99,102,241,0.12)"}
                                 >
-                                    Live 
+                                    Live
                                 </a>
                             </div>
                         </motion.div>
@@ -276,10 +272,10 @@ const Project = () => {
                                 background: "#0F172A",
                                 border: `1px solid ${selectedProject.accent}44`,
                                 borderRadius: "24px",
-                                padding: "36px 32px",
+                                padding: "clamp(20px, 4vw, 36px) clamp(18px, 3vw, 32px)",
                                 width: "100%", maxWidth: "520px",
                                 position: "relative",
-                                maxHeight: "85vh", overflowY: "auto",
+                                maxHeight: "90vh", overflowY: "auto",
                             }}
                         >
                             {/* Top accent */}
@@ -315,7 +311,7 @@ const Project = () => {
                                 {selectedProject.role}
                             </span>
 
-                            <h3 style={{ margin: "0 0 16px", fontSize: "1.4rem", fontWeight: "800", color: "#F1F5F9" }}>
+                            <h3 style={{ margin: "0 0 16px", fontSize: "clamp(1.1rem, 3vw, 1.4rem)", fontWeight: "800", color: "#F1F5F9" }}>
                                 {selectedProject.title}
                             </h3>
 
@@ -332,7 +328,6 @@ const Project = () => {
                                 ))}
                             </ul>
 
-                            {/* Tech stack */}
                             <div style={{ marginBottom: "24px" }}>
                                 <p style={{ margin: "0 0 10px", fontSize: "11px", color: "#64748B", textTransform: "uppercase", letterSpacing: "0.1em" }}>Tech Stack</p>
                                 <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
@@ -360,7 +355,7 @@ const Project = () => {
                                     onMouseEnter={e => e.currentTarget.style.background = "rgba(255,255,255,0.08)"}
                                     onMouseLeave={e => e.currentTarget.style.background = "rgba(255,255,255,0.04)"}
                                 >
-                                    GitHub 
+                                    GitHub
                                 </a>
                                 <a href={selectedProject.liveLink} target="_blank" rel="noopener noreferrer" style={{
                                     flex: 1, padding: "12px",
@@ -375,13 +370,26 @@ const Project = () => {
                                     onMouseEnter={e => e.currentTarget.style.opacity = "0.85"}
                                     onMouseLeave={e => e.currentTarget.style.opacity = "1"}
                                 >
-                                    Live Demo 
+                                    Live Demo
                                 </a>
                             </div>
                         </motion.div>
                     </motion.div>
                 )}
             </AnimatePresence>
+
+            <style>{`
+              .project-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+              }
+              @media (max-width: 640px) {
+                .project-grid {
+                  grid-template-columns: 1fr !important;
+                }
+              }
+            `}</style>
         </section>
     );
 };
