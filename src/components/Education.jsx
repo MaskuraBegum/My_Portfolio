@@ -2,120 +2,158 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const educationData = [
-  {
-    id: 1,
-    emoji: "🎓",
-    title: "University",
-    institution: "Bangladesh Army International University of Science and Technology",
-    department: "BSC. in Computer Science and Engineering",
-    duration: "2022 - Present",
-  },
-  {
-    id: 2,
-    emoji: "🏫",
-    title: "College",
-    institution: "Bangladesh Gas Fields School and College",
-    department: "Higher Secondary Certificate(Science)",
-    duration: "2020",
-  },
-  {
-    id: 3,
-    emoji: "📚",
-    title: "High School",
-    institution: "Sabera Sobhan Govt. Girls High School",
-    department: "Secondary School Certificate(Science)",
-    duration: "2018",
-  },
+    {
+        emoji: "🎓",
+        level: "University",
+        institution: "Bangladesh Army International University of Science and Technology",
+        degree: "BSc. in Computer Science and Engineering",
+        duration: "March 2022 – Feb 2026",
+        accent: "#6366F1",
+        accentMuted: "rgba(99,102,241,0.12)",
+        full: true,
+    },
+    {
+        emoji: "🏫",
+        level: "College",
+        institution: "Bangladesh Gas Fields School and College",
+        degree: "Higher Secondary Certificate (Science)",
+        duration: "2020",
+        accent: "#10B981",
+        accentMuted: "rgba(16,185,129,0.12)",
+        full: false,
+    },
+    {
+        emoji: "📚",
+        level: "High School",
+        institution: "Sabera Sobhan Govt. Girls High School",
+        degree: "Secondary School Certificate (Science)",
+        duration: "2018",
+        accent: "#F59E0B",
+        accentMuted: "rgba(245,158,11,0.12)",
+        full: false,
+    },
 ];
 
 const Education = () => {
-  return (
-    <section id="education" className="py-16 bg-gradient-to-b from-gray-900 via-gray-700 to-gray-900 relative">
-      <div className="absolute inset-0 opacity-30 z-0"></div>
-      <div className="max-w-6xl mx-auto px-6 text-white relative z-10">
-        <h2 className="text-4xl font-bold text-center text-amber-300 mb-12">Education</h2>
+    return (
+        <section id="education" style={{ position: "relative", overflow: "hidden", padding: "100px 0" }}>
+            {/* Grid */}
+            <div style={{
+                position: "absolute", inset: 0,
+                backgroundImage: `linear-gradient(rgba(99,102,241,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(99,102,241,0.04) 1px, transparent 1px)`,
+                backgroundSize: "48px 48px", pointerEvents: "none",
+            }} />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* University Card (First Row) */}
-          <motion.div
-            key={educationData[0].id}
-            className="bg-gray-800 p-2 lg:p-6 rounded-2xl shadow-xl flex flex-col items-center text-center hover:scale-105 hover:shadow-lg transition-all duration-300 col-span-1 md:col-span-3 relative overflow-hidden"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <motion.div
-              className="text-5xl mb-2 lg:mb-4"
-              animate={{ y: [0, -5, 0] }}
-              transition={{ duration: 1.2, repeat: Infinity, repeatType: "reverse" }}
-            >
-              {educationData[0].emoji}
-            </motion.div>
-            <p className="text-lg lg:text-2xl font-bold text-gray-300">{educationData[0].institution}</p>
-            <p className="text-gray-300 text-lg lg:text-2xl">{educationData[0].department}</p>
-            <p className="text-gray-300 text-lg">{educationData[0].duration}</p>
+            <div className="max-w-5xl mx-auto px-6" style={{ position: "relative", zIndex: 1 }}>
 
-            {/* Flip Animation */}
-            <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-green-400 to-blue-500 rounded-2xl opacity-0 hover:opacity-30 transition-opacity duration-500"
-              style={{ zIndex: -1 }}
-            ></motion.div>
-          </motion.div>
+                {/* Heading */}
+                <div style={{ textAlign: "center", marginBottom: "64px" }}>
+                    <p style={{ fontSize: "11px", letterSpacing: "0.2em", textTransform: "uppercase", color: "#6366F1", marginBottom: "12px", fontFamily: "'Courier New', monospace" }}>
+                        — Academic Background
+                    </p>
+                    <h2 style={{
+                        fontSize: "clamp(2rem, 5vw, 3rem)", fontWeight: "800",
+                        color: "#F1F5F9", margin: 0, lineHeight: 1.1, letterSpacing: "-0.02em",
+                    }}>
+                        My{" "}
+                        <span style={{
+                            background: "linear-gradient(135deg, #F59E0B, #A78BFA)",
+                            WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
+                        }}>Education</span>
+                    </h2>
+                </div>
 
-          {/* College and High School Cards (Second Row) */}
-          <motion.div
-            key={educationData[1].id}
-            className="bg-gray-800 p-2 lg:p-6 rounded-2xl shadow-xl flex flex-col items-center text-center hover:scale-105 hover:shadow-lg transition-all duration-300 col-span-1 md:col-span-2 relative overflow-hidden"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <motion.div
-              className="text-5xl mb-2 lg:mb-4"
-              animate={{ y: [0, -5, 0] }}
-              transition={{ duration: 1.2, repeat: Infinity, repeatType: "reverse" }}
-            >
-              {educationData[1].emoji}
-            </motion.div>
-            <p className="text-lg lg:text-2xl font-bold text-gray-300">{educationData[1].institution}</p>
-            <p className="text-gray-300 ttext-lg lg:text-2xl">{educationData[1].department}</p>
-            <p className="text-gray-300 text-lg">{educationData[1].duration}</p>
+                {/* University — full width */}
+                <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                    style={{
+                        background: "rgba(15,23,42,0.75)",
+                        border: "1px solid rgba(99,102,241,0.25)",
+                        borderRadius: "20px",
+                        padding: "36px 40px",
+                        marginBottom: "20px",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "28px",
+                        flexWrap: "wrap",
+                        position: "relative",
+                        overflow: "hidden",
+                        transition: "border-color 0.3s ease, transform 0.3s ease",
+                        cursor: "default",
+                    }}
+                    whileHover={{ y: -4 }}
+                >
+                    {/* Left accent bar */}
+                    <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: "4px", background: "linear-gradient(to bottom, #6366F1, #8B5CF6)" }} />
 
-            {/* Flip Animation */}
-            <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-green-400 to-blue-500 rounded-2xl opacity-0 hover:opacity-30 transition-opacity duration-500"
-              style={{ zIndex: -1 }}
-            ></motion.div>
-          </motion.div>
+                    <div style={{
+                        width: "72px", height: "72px", borderRadius: "50%", flexShrink: 0,
+                        background: "rgba(99,102,241,0.12)", border: "2px solid rgba(99,102,241,0.3)",
+                        display: "flex", alignItems: "center", justifyContent: "center", fontSize: "32px",
+                    }}>🎓</div>
 
-          <motion.div
-            key={educationData[2].id}
-            className="bg-gray-800 p-2 lg:p-6 rounded-2xl shadow-xl flex flex-col items-center text-center hover:scale-105 hover:shadow-lg transition-all duration-300 col-span-1 md:col-span-1 relative overflow-hidden"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-          >
-            <motion.div
-              className="text-5xl mb-2 lg:mb-4"
-              animate={{ y: [0, -5, 0] }}
-              transition={{ duration: 1.2, repeat: Infinity, repeatType: "reverse" }}
-            >
-              {educationData[2].emoji}
-            </motion.div>
-            <p className="text-lg lg:text-2xl font-bold text-gray-300">{educationData[2].institution}</p>
-            <p className="text-gray-300 text-xl">{educationData[2].department}</p>
-            <p className="text-gray-300 text-lg">{educationData[2].duration}</p>
+                    <div style={{ flex: 1, minWidth: "220px" }}>
+                        <span style={{
+                            fontSize: "10px", letterSpacing: "0.15em", textTransform: "uppercase",
+                            color: "#6366F1", fontFamily: "'Courier New', monospace", fontWeight: "700",
+                        }}>University · {educationData[0].duration}</span>
+                        <h3 style={{ margin: "8px 0 6px", fontSize: "clamp(1rem, 2.5vw, 1.3rem)", fontWeight: "700", color: "#F1F5F9", lineHeight: 1.3 }}>
+                            {educationData[0].institution}
+                        </h3>
+                        <p style={{ margin: 0, fontSize: "15px", color: "#94A3B8" }}>{educationData[0].degree}</p>
+                    </div>
 
-            {/* Flip Animation */}
-            <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-green-400 to-blue-500 rounded-2xl opacity-0 hover:opacity-30 transition-opacity duration-500"
-              style={{ zIndex: -1 }}
-            ></motion.div>
-          </motion.div>
-        </div>
-      </div>
-    </section>
-  );
+                    {/* Background glow */}
+                    <div style={{ position: "absolute", right: "-40px", top: "-40px", width: "200px", height: "200px", borderRadius: "50%", background: "radial-gradient(circle, rgba(99,102,241,0.08) 0%, transparent 70%)", pointerEvents: "none" }} />
+                </motion.div>
+
+                {/* College + High School — 2 col */}
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "20px" }}>
+                    {educationData.slice(1).map((edu, i) => (
+                        <motion.div
+                            key={edu.level}
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: i * 0.15 }}
+                            style={{
+                                background: "rgba(15,23,42,0.75)",
+                                border: `1px solid ${edu.accent}33`,
+                                borderRadius: "20px",
+                                padding: "32px 28px",
+                                position: "relative",
+                                overflow: "hidden",
+                                transition: "border-color 0.3s ease",
+                                cursor: "default",
+                            }}
+                            whileHover={{ y: -4 }}
+                        >
+                            <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: "4px", background: edu.accent }} />
+
+                            <div style={{
+                                width: "56px", height: "56px", borderRadius: "50%",
+                                background: edu.accentMuted, border: `1px solid ${edu.accent}44`,
+                                display: "flex", alignItems: "center", justifyContent: "center",
+                                fontSize: "26px", marginBottom: "16px",
+                            }}>{edu.emoji}</div>
+
+                            <span style={{
+                                fontSize: "10px", letterSpacing: "0.15em", textTransform: "uppercase",
+                                color: edu.accent, fontFamily: "'Courier New', monospace", fontWeight: "700",
+                            }}>{edu.level} · {edu.duration}</span>
+                            <h3 style={{ margin: "8px 0 8px", fontSize: "1rem", fontWeight: "700", color: "#F1F5F9", lineHeight: 1.4 }}>
+                                {edu.institution}
+                            </h3>
+                            <p style={{ margin: 0, fontSize: "14px", color: "#94A3B8" }}>{edu.degree}</p>
+                        </motion.div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
 };
 
 export default Education;

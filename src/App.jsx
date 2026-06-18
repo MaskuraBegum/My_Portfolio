@@ -6,10 +6,11 @@ import Project from './components/Project';
 import Experience from './components/Experience';
 import Education from './components/Education';
 import Contact from './components/Contact';
+import Achievement from './components/Achievement';
 
 function App() {
   return (
-    <div className='  bg-gradient-to-b from-gray-950 via-gray-500 to-gray-950'>
+    <div className='  bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950'>
      
       <div className=' overflow-x-hidden w-full pt-10'>
     
@@ -19,6 +20,7 @@ function App() {
         <About id="about" />
         <Skill id="skill" />
         <Project id="project" />
+        <Achievement id="achievement"/>
         <Education id="education" />
         <Experience id="experience" />
         <Contact id="contact" />
